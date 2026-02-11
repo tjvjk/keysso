@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0 (2026-02-11)
+
+Full Changelog: [v0.0.2...v0.1.0](https://github.com/tjvjk/keysso/compare/v0.0.2...v0.1.0)
+
+### Features
+
+* Revert OpenAPI operationId/schema changes ([affd7fb](https://github.com/tjvjk/keysso/commit/affd7fb8f929c094e25c0eefaaa29a4afa52f08c))
+
 ## 0.0.2 (2026-02-11)
 
 Full Changelog: [v0.0.1...v0.0.2](https://github.com/tjvjk/keysso/compare/v0.0.1...v0.0.2)
