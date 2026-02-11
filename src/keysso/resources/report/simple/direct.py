@@ -31,7 +31,7 @@ class DirectResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/keysso-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
         return DirectResourceWithRawResponse(self)
 
@@ -40,7 +40,7 @@ class DirectResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/keysso-python#with_streaming_response
+        For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
         return DirectResourceWithStreamingResponse(self)
 
@@ -210,7 +210,7 @@ class AsyncDirectResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/keysso-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
         return AsyncDirectResourceWithRawResponse(self)
 
@@ -219,7 +219,7 @@ class AsyncDirectResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/keysso-python#with_streaming_response
+        For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
         return AsyncDirectResourceWithStreamingResponse(self)
 
