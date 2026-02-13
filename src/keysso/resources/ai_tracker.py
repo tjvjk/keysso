@@ -6,22 +6,22 @@ from typing import Iterable
 
 import httpx
 
-from ...types import ai_tracker_list_params, ai_tracker_create_params, ai_tracker_get_state_params
-from ..._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
-from ..._utils import maybe_transform, async_maybe_transform
-from ..._compat import cached_property
-from ..._resource import SyncAPIResource, AsyncAPIResource
-from ..._response import (
+from ..types import ai_tracker_list_params, ai_tracker_create_params, ai_tracker_get_state_params
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
+from .._utils import maybe_transform, async_maybe_transform
+from .._compat import cached_property
+from .._resource import SyncAPIResource, AsyncAPIResource
+from .._response import (
     to_raw_response_wrapper,
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from ..._base_client import make_request_options
-from ...types.system_item import SystemItem
-from ...types.ai_tracker_list_response import AITrackerListResponse
-from ...types.ai_tracker_create_response import AITrackerCreateResponse
-from ...types.ai_tracker_get_state_response import AITrackerGetStateResponse
+from .._base_client import make_request_options
+from ..types.system_item import SystemItem
+from ..types.ai_tracker_list_response import AITrackerListResponse
+from ..types.ai_tracker_create_response import AITrackerCreateResponse
+from ..types.ai_tracker_get_state_response import AITrackerGetStateResponse
 
 __all__ = ["AITrackerResource", "AsyncAITrackerResource"]
 

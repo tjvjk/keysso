@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 (2026-02-13)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/tjvjk/keysso/compare/v0.1.0...v0.1.1)
+
+### Chores
+
+* format all `api.md` files ([219d57a](https://github.com/tjvjk/keysso/commit/219d57a6983e224e590f3d5e4b24bfacf05f455f))
+
 ## 0.1.0 (2026-02-11)
 
 Full Changelog: [v0.0.2...v0.1.0](https://github.com/tjvjk/keysso/compare/v0.0.2...v0.1.0)

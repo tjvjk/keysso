@@ -6,7 +6,7 @@ from typing import Union
 
 import httpx
 
-from ...types import (
+from ..types import (
     wordstat_list_params,
     wordstat_report_params,
     wordstat_delete_words_params,
@@ -15,24 +15,24 @@ from ...types import (
     wordstat_get_project_status_params,
     wordstat_get_projects_completed_params,
 )
-from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from ..._utils import maybe_transform, async_maybe_transform
-from ..._compat import cached_property
-from ..._resource import SyncAPIResource, AsyncAPIResource
-from ..._response import (
+from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
+from .._utils import maybe_transform, async_maybe_transform
+from .._compat import cached_property
+from .._resource import SyncAPIResource, AsyncAPIResource
+from .._response import (
     to_raw_response_wrapper,
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from ..._base_client import make_request_options
-from ...types.wordstat_list_response import WordstatListResponse
-from ...types.wordstat_report_response import WordstatReportResponse
-from ...types.wordstat_delete_words_response import WordstatDeleteWordsResponse
-from ...types.wordstat_create_project_response import WordstatCreateProjectResponse
-from ...types.wordstat_delete_project_response import WordstatDeleteProjectResponse
-from ...types.wordstat_get_project_status_response import WordstatGetProjectStatusResponse
-from ...types.wordstat_get_projects_completed_response import WordstatGetProjectsCompletedResponse
+from .._base_client import make_request_options
+from ..types.wordstat_list_response import WordstatListResponse
+from ..types.wordstat_report_response import WordstatReportResponse
+from ..types.wordstat_delete_words_response import WordstatDeleteWordsResponse
+from ..types.wordstat_create_project_response import WordstatCreateProjectResponse
+from ..types.wordstat_delete_project_response import WordstatDeleteProjectResponse
+from ..types.wordstat_get_project_status_response import WordstatGetProjectStatusResponse
+from ..types.wordstat_get_projects_completed_response import WordstatGetProjectsCompletedResponse
 
 __all__ = ["WordstatResource", "AsyncWordstatResource"]
 

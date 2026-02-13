@@ -40,13 +40,7 @@ from .keywords_by_list import (
     KeywordsByListResourceWithStreamingResponse,
     AsyncKeywordsByListResourceWithStreamingResponse,
 )
-from ...types.report.base import Base
-from ...types.tool_compare_response import ToolCompareResponse
-from ...types.tool_suggest_response import ToolSuggestResponse
-from ...types.tool_check_top_response import ToolCheckTopResponse
-from ...types.tool_create_unique_response import ToolCreateUniqueResponse
-from ...types.tool_delete_double_response import ToolDeleteDoubleResponse
-from .extended_keywords.extended_keywords import (
+from .extended_keywords import (
     ExtendedKeywordsResource,
     AsyncExtendedKeywordsResource,
     ExtendedKeywordsResourceWithRawResponse,
@@ -54,7 +48,7 @@ from .extended_keywords.extended_keywords import (
     ExtendedKeywordsResourceWithStreamingResponse,
     AsyncExtendedKeywordsResourceWithStreamingResponse,
 )
-from .keywords_by_pages.keywords_by_pages import (
+from .keywords_by_pages import (
     KeywordsByPagesResource,
     AsyncKeywordsByPagesResource,
     KeywordsByPagesResourceWithRawResponse,
@@ -62,8 +56,8 @@ from .keywords_by_pages.keywords_by_pages import (
     KeywordsByPagesResourceWithStreamingResponse,
     AsyncKeywordsByPagesResourceWithStreamingResponse,
 )
-from ...types.tool_list_site_themes_response import ToolListSiteThemesResponse
-from .dictionary_by_pages.dictionary_by_pages import (
+from ...types.report.base import Base
+from .dictionary_by_pages import (
     DictionaryByPagesResource,
     AsyncDictionaryByPagesResource,
     DictionaryByPagesResourceWithRawResponse,
@@ -71,9 +65,7 @@ from .dictionary_by_pages.dictionary_by_pages import (
     DictionaryByPagesResourceWithStreamingResponse,
     AsyncDictionaryByPagesResourceWithStreamingResponse,
 )
-from ...types.tool_create_history_serp_response import ToolCreateHistorySerpResponse
-from ...types.tool_create_domains_batch_response import ToolCreateDomainsBatchResponse
-from .concurents_by_keywords.concurents_by_keywords import (
+from .concurents_by_keywords import (
     ConcurentsByKeywordsResource,
     AsyncConcurentsByKeywordsResource,
     ConcurentsByKeywordsResourceWithRawResponse,
@@ -81,7 +73,7 @@ from .concurents_by_keywords.concurents_by_keywords import (
     ConcurentsByKeywordsResourceWithStreamingResponse,
     AsyncConcurentsByKeywordsResourceWithStreamingResponse,
 )
-from .dictionary_ext_by_page.dictionary_ext_by_page import (
+from .dictionary_ext_by_page import (
     DictionaryExtByPageResource,
     AsyncDictionaryExtByPageResource,
     DictionaryExtByPageResourceWithRawResponse,
@@ -89,6 +81,14 @@ from .dictionary_ext_by_page.dictionary_ext_by_page import (
     DictionaryExtByPageResourceWithStreamingResponse,
     AsyncDictionaryExtByPageResourceWithStreamingResponse,
 )
+from ...types.tool_compare_response import ToolCompareResponse
+from ...types.tool_suggest_response import ToolSuggestResponse
+from ...types.tool_check_top_response import ToolCheckTopResponse
+from ...types.tool_create_unique_response import ToolCreateUniqueResponse
+from ...types.tool_delete_double_response import ToolDeleteDoubleResponse
+from ...types.tool_list_site_themes_response import ToolListSiteThemesResponse
+from ...types.tool_create_history_serp_response import ToolCreateHistorySerpResponse
+from ...types.tool_create_domains_batch_response import ToolCreateDomainsBatchResponse
 from ...types.tool_check_top_concurents_urls_response import ToolCheckTopConcurentsURLsResponse
 from ...types.tool_check_top_concurents_domains_response import ToolCheckTopConcurentsDomainsResponse
 
