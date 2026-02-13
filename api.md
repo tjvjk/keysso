@@ -215,8 +215,8 @@ from keysso.types.report import Base, GroupCreateResponse, GroupListResponse
 
 Methods:
 
-- <code title="post /report/group">client.report.group.<a href="./src/keysso/resources/report/group/group.py">create</a>(\*\*<a href="src/keysso/types/report/group_create_params.py">params</a>) -> <a href="./src/keysso/types/report/group_create_response.py">GroupCreateResponse</a></code>
-- <code title="get /report/group/list">client.report.group.<a href="./src/keysso/resources/report/group/group.py">list</a>(\*\*<a href="src/keysso/types/report/group_list_params.py">params</a>) -> <a href="./src/keysso/types/report/group_list_response.py">GroupListResponse</a></code>
+- <code title="post /report/group">client.report.group.<a href="./src/keysso/resources/report/group.py">create</a>(\*\*<a href="src/keysso/types/report/group_create_params.py">params</a>) -> <a href="./src/keysso/types/report/group_create_response.py">GroupCreateResponse</a></code>
+- <code title="get /report/group/list">client.report.group.<a href="./src/keysso/resources/report/group.py">list</a>(\*\*<a href="src/keysso/types/report/group_list_params.py">params</a>) -> <a href="./src/keysso/types/report/group_list_response.py">GroupListResponse</a></code>
 
 ## Ads
 
@@ -230,7 +230,7 @@ from keysso.types.report.ads import RsyaRetrieveResponse
 
 Methods:
 
-- <code title="get /report/ads/rsya">client.report.ads.rsya.<a href="./src/keysso/resources/report/ads/rsya/rsya.py">retrieve</a>(\*\*<a href="src/keysso/types/report/ads/rsya_retrieve_params.py">params</a>) -> <a href="./src/keysso/types/report/ads/rsya_retrieve_response.py">RsyaRetrieveResponse</a></code>
+- <code title="get /report/ads/rsya">client.report.ads.rsya.<a href="./src/keysso/resources/report/ads/rsya.py">retrieve</a>(\*\*<a href="src/keysso/types/report/ads/rsya_retrieve_params.py">params</a>) -> <a href="./src/keysso/types/report/ads/rsya_retrieve_response.py">RsyaRetrieveResponse</a></code>
 
 ## Owner
 
@@ -288,7 +288,7 @@ from keysso.types.tools import ExtendedKeywordCreateResponse
 
 Methods:
 
-- <code title="post /tools/extended_keywords">client.tools.extended_keywords.<a href="./src/keysso/resources/tools/extended_keywords/extended_keywords.py">create</a>(\*\*<a href="src/keysso/types/tools/extended_keyword_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/extended_keyword_create_response.py">ExtendedKeywordCreateResponse</a></code>
+- <code title="post /tools/extended_keywords">client.tools.extended_keywords.<a href="./src/keysso/resources/tools/extended_keywords.py">create</a>(\*\*<a href="src/keysso/types/tools/extended_keyword_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/extended_keyword_create_response.py">ExtendedKeywordCreateResponse</a></code>
 
 ## KeywordsByList
 
@@ -312,7 +312,7 @@ from keysso.types.tools import ConcurentsByKeywordCreateResponse
 
 Methods:
 
-- <code title="post /tools/concurents_by_keywords">client.tools.concurents_by_keywords.<a href="./src/keysso/resources/tools/concurents_by_keywords/concurents_by_keywords.py">create</a>(\*\*<a href="src/keysso/types/tools/concurents_by_keyword_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/concurents_by_keyword_create_response.py">ConcurentsByKeywordCreateResponse</a></code>
+- <code title="post /tools/concurents_by_keywords">client.tools.concurents_by_keywords.<a href="./src/keysso/resources/tools/concurents_by_keywords.py">create</a>(\*\*<a href="src/keysso/types/tools/concurents_by_keyword_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/concurents_by_keyword_create_response.py">ConcurentsByKeywordCreateResponse</a></code>
 
 ## KeywordsByPages
 
@@ -324,7 +324,7 @@ from keysso.types.tools import KeywordsByPageCreateResponse
 
 Methods:
 
-- <code title="post /tools/keywords_by_pages">client.tools.keywords_by_pages.<a href="./src/keysso/resources/tools/keywords_by_pages/keywords_by_pages.py">create</a>(\*\*<a href="src/keysso/types/tools/keywords_by_page_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/keywords_by_page_create_response.py">KeywordsByPageCreateResponse</a></code>
+- <code title="post /tools/keywords_by_pages">client.tools.keywords_by_pages.<a href="./src/keysso/resources/tools/keywords_by_pages.py">create</a>(\*\*<a href="src/keysso/types/tools/keywords_by_page_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/keywords_by_page_create_response.py">KeywordsByPageCreateResponse</a></code>
 
 ## DictionaryExtByPage
 
@@ -336,7 +336,7 @@ from keysso.types.tools import DictionaryExtByPageCreateResponse
 
 Methods:
 
-- <code title="post /tools/dictionary-ext-by-page">client.tools.dictionary_ext_by_page.<a href="./src/keysso/resources/tools/dictionary_ext_by_page/dictionary_ext_by_page.py">create</a>(\*\*<a href="src/keysso/types/tools/dictionary_ext_by_page_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/dictionary_ext_by_page_create_response.py">DictionaryExtByPageCreateResponse</a></code>
+- <code title="post /tools/dictionary-ext-by-page">client.tools.dictionary_ext_by_page.<a href="./src/keysso/resources/tools/dictionary_ext_by_page.py">create</a>(\*\*<a href="src/keysso/types/tools/dictionary_ext_by_page_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/dictionary_ext_by_page_create_response.py">DictionaryExtByPageCreateResponse</a></code>
 
 ## DictionaryByPages
 
@@ -348,7 +348,7 @@ from keysso.types.tools import DictionaryByPageCreateResponse
 
 Methods:
 
-- <code title="post /tools/dictionary-by-pages">client.tools.dictionary_by_pages.<a href="./src/keysso/resources/tools/dictionary_by_pages/dictionary_by_pages.py">create</a>(\*\*<a href="src/keysso/types/tools/dictionary_by_page_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/dictionary_by_page_create_response.py">DictionaryByPageCreateResponse</a></code>
+- <code title="post /tools/dictionary-by-pages">client.tools.dictionary_by_pages.<a href="./src/keysso/resources/tools/dictionary_by_pages.py">create</a>(\*\*<a href="src/keysso/types/tools/dictionary_by_page_create_params.py">params</a>) -> <a href="./src/keysso/types/tools/dictionary_by_page_create_response.py">DictionaryByPageCreateResponse</a></code>
 
 # Clustering
 
@@ -360,8 +360,8 @@ from keysso.types import ClusteringCreateResponse, ClusteringListResponse
 
 Methods:
 
-- <code title="post /clustering">client.clustering.<a href="./src/keysso/resources/clustering/clustering.py">create</a>(\*\*<a href="src/keysso/types/clustering_create_params.py">params</a>) -> <a href="./src/keysso/types/clustering_create_response.py">ClusteringCreateResponse</a></code>
-- <code title="get /clustering/list">client.clustering.<a href="./src/keysso/resources/clustering/clustering.py">list</a>(\*\*<a href="src/keysso/types/clustering_list_params.py">params</a>) -> <a href="./src/keysso/types/clustering_list_response.py">ClusteringListResponse</a></code>
+- <code title="post /clustering">client.clustering.<a href="./src/keysso/resources/clustering.py">create</a>(\*\*<a href="src/keysso/types/clustering_create_params.py">params</a>) -> <a href="./src/keysso/types/clustering_create_response.py">ClusteringCreateResponse</a></code>
+- <code title="get /clustering/list">client.clustering.<a href="./src/keysso/resources/clustering.py">list</a>(\*\*<a href="src/keysso/types/clustering_list_params.py">params</a>) -> <a href="./src/keysso/types/clustering_list_response.py">ClusteringListResponse</a></code>
 
 ## Uid
 
@@ -436,13 +436,13 @@ from keysso.types import (
 
 Methods:
 
-- <code title="get /wordstat/list">client.wordstat.<a href="./src/keysso/resources/wordstat/wordstat.py">list</a>(\*\*<a href="src/keysso/types/wordstat_list_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_list_response.py">WordstatListResponse</a></code>
-- <code title="post /wordstat/create-project">client.wordstat.<a href="./src/keysso/resources/wordstat/wordstat.py">create_project</a>(\*\*<a href="src/keysso/types/wordstat_create_project_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_create_project_response.py">WordstatCreateProjectResponse</a></code>
-- <code title="delete /wordstat/delete-project">client.wordstat.<a href="./src/keysso/resources/wordstat/wordstat.py">delete_project</a>(\*\*<a href="src/keysso/types/wordstat_delete_project_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_delete_project_response.py">WordstatDeleteProjectResponse</a></code>
-- <code title="delete /wordstat/delete-words">client.wordstat.<a href="./src/keysso/resources/wordstat/wordstat.py">delete_words</a>(\*\*<a href="src/keysso/types/wordstat_delete_words_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_delete_words_response.py">WordstatDeleteWordsResponse</a></code>
-- <code title="get /wordstat/get-project-status">client.wordstat.<a href="./src/keysso/resources/wordstat/wordstat.py">get_project_status</a>(\*\*<a href="src/keysso/types/wordstat_get_project_status_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_get_project_status_response.py">WordstatGetProjectStatusResponse</a></code>
-- <code title="get /wordstat/get-projects-completed">client.wordstat.<a href="./src/keysso/resources/wordstat/wordstat.py">get_projects_completed</a>(\*\*<a href="src/keysso/types/wordstat_get_projects_completed_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_get_projects_completed_response.py">WordstatGetProjectsCompletedResponse</a></code>
-- <code title="get /wordstat/report">client.wordstat.<a href="./src/keysso/resources/wordstat/wordstat.py">report</a>(\*\*<a href="src/keysso/types/wordstat_report_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_report_response.py">WordstatReportResponse</a></code>
+- <code title="get /wordstat/list">client.wordstat.<a href="./src/keysso/resources/wordstat.py">list</a>(\*\*<a href="src/keysso/types/wordstat_list_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_list_response.py">WordstatListResponse</a></code>
+- <code title="post /wordstat/create-project">client.wordstat.<a href="./src/keysso/resources/wordstat.py">create_project</a>(\*\*<a href="src/keysso/types/wordstat_create_project_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_create_project_response.py">WordstatCreateProjectResponse</a></code>
+- <code title="delete /wordstat/delete-project">client.wordstat.<a href="./src/keysso/resources/wordstat.py">delete_project</a>(\*\*<a href="src/keysso/types/wordstat_delete_project_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_delete_project_response.py">WordstatDeleteProjectResponse</a></code>
+- <code title="delete /wordstat/delete-words">client.wordstat.<a href="./src/keysso/resources/wordstat.py">delete_words</a>(\*\*<a href="src/keysso/types/wordstat_delete_words_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_delete_words_response.py">WordstatDeleteWordsResponse</a></code>
+- <code title="get /wordstat/get-project-status">client.wordstat.<a href="./src/keysso/resources/wordstat.py">get_project_status</a>(\*\*<a href="src/keysso/types/wordstat_get_project_status_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_get_project_status_response.py">WordstatGetProjectStatusResponse</a></code>
+- <code title="get /wordstat/get-projects-completed">client.wordstat.<a href="./src/keysso/resources/wordstat.py">get_projects_completed</a>(\*\*<a href="src/keysso/types/wordstat_get_projects_completed_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_get_projects_completed_response.py">WordstatGetProjectsCompletedResponse</a></code>
+- <code title="get /wordstat/report">client.wordstat.<a href="./src/keysso/resources/wordstat.py">report</a>(\*\*<a href="src/keysso/types/wordstat_report_params.py">params</a>) -> <a href="./src/keysso/types/wordstat_report_response.py">WordstatReportResponse</a></code>
 
 ## ID
 
@@ -462,8 +462,8 @@ from keysso.types import Engine, SerpCreateResponse, SerpListResponse
 
 Methods:
 
-- <code title="post /serp">client.serp.<a href="./src/keysso/resources/serp/serp.py">create</a>(\*\*<a href="src/keysso/types/serp_create_params.py">params</a>) -> <a href="./src/keysso/types/serp_create_response.py">SerpCreateResponse</a></code>
-- <code title="get /serp">client.serp.<a href="./src/keysso/resources/serp/serp.py">list</a>(\*\*<a href="src/keysso/types/serp_list_params.py">params</a>) -> <a href="./src/keysso/types/serp_list_response.py">SerpListResponse</a></code>
+- <code title="post /serp">client.serp.<a href="./src/keysso/resources/serp.py">create</a>(\*\*<a href="src/keysso/types/serp_create_params.py">params</a>) -> <a href="./src/keysso/types/serp_create_response.py">SerpCreateResponse</a></code>
+- <code title="get /serp">client.serp.<a href="./src/keysso/resources/serp.py">list</a>(\*\*<a href="src/keysso/types/serp_list_params.py">params</a>) -> <a href="./src/keysso/types/serp_list_response.py">SerpListResponse</a></code>
 
 ## ID
 
@@ -552,9 +552,9 @@ from keysso.types import (
 
 Methods:
 
-- <code title="post /monitoring">client.monitoring.<a href="./src/keysso/resources/monitoring/monitoring.py">create</a>(\*\*<a href="src/keysso/types/monitoring_create_params.py">params</a>) -> <a href="./src/keysso/types/monitoring_create_response.py">MonitoringCreateResponse</a></code>
-- <code title="get /monitoring">client.monitoring.<a href="./src/keysso/resources/monitoring/monitoring.py">list</a>(\*\*<a href="src/keysso/types/monitoring_list_params.py">params</a>) -> <a href="./src/keysso/types/monitoring_list_response.py">MonitoringListResponse</a></code>
-- <code title="get /monitoring/state">client.monitoring.<a href="./src/keysso/resources/monitoring/monitoring.py">get_state</a>(\*\*<a href="src/keysso/types/monitoring_get_state_params.py">params</a>) -> <a href="./src/keysso/types/monitoring_get_state_response.py">MonitoringGetStateResponse</a></code>
+- <code title="post /monitoring">client.monitoring.<a href="./src/keysso/resources/monitoring.py">create</a>(\*\*<a href="src/keysso/types/monitoring_create_params.py">params</a>) -> <a href="./src/keysso/types/monitoring_create_response.py">MonitoringCreateResponse</a></code>
+- <code title="get /monitoring">client.monitoring.<a href="./src/keysso/resources/monitoring.py">list</a>(\*\*<a href="src/keysso/types/monitoring_list_params.py">params</a>) -> <a href="./src/keysso/types/monitoring_list_response.py">MonitoringListResponse</a></code>
+- <code title="get /monitoring/state">client.monitoring.<a href="./src/keysso/resources/monitoring.py">get_state</a>(\*\*<a href="src/keysso/types/monitoring_get_state_params.py">params</a>) -> <a href="./src/keysso/types/monitoring_get_state_response.py">MonitoringGetStateResponse</a></code>
 
 # AITracker
 
@@ -571,9 +571,9 @@ from keysso.types import (
 
 Methods:
 
-- <code title="post /ai_tracker">client.ai_tracker.<a href="./src/keysso/resources/ai_tracker/ai_tracker.py">create</a>(\*\*<a href="src/keysso/types/ai_tracker_create_params.py">params</a>) -> <a href="./src/keysso/types/ai_tracker_create_response.py">AITrackerCreateResponse</a></code>
-- <code title="get /ai_tracker">client.ai_tracker.<a href="./src/keysso/resources/ai_tracker/ai_tracker.py">list</a>(\*\*<a href="src/keysso/types/ai_tracker_list_params.py">params</a>) -> <a href="./src/keysso/types/ai_tracker_list_response.py">AITrackerListResponse</a></code>
-- <code title="get /ai_tracker/state">client.ai_tracker.<a href="./src/keysso/resources/ai_tracker/ai_tracker.py">get_state</a>(\*\*<a href="src/keysso/types/ai_tracker_get_state_params.py">params</a>) -> <a href="./src/keysso/types/ai_tracker_get_state_response.py">AITrackerGetStateResponse</a></code>
+- <code title="post /ai_tracker">client.ai_tracker.<a href="./src/keysso/resources/ai_tracker.py">create</a>(\*\*<a href="src/keysso/types/ai_tracker_create_params.py">params</a>) -> <a href="./src/keysso/types/ai_tracker_create_response.py">AITrackerCreateResponse</a></code>
+- <code title="get /ai_tracker">client.ai_tracker.<a href="./src/keysso/resources/ai_tracker.py">list</a>(\*\*<a href="src/keysso/types/ai_tracker_list_params.py">params</a>) -> <a href="./src/keysso/types/ai_tracker_list_response.py">AITrackerListResponse</a></code>
+- <code title="get /ai_tracker/state">client.ai_tracker.<a href="./src/keysso/resources/ai_tracker.py">get_state</a>(\*\*<a href="src/keysso/types/ai_tracker_get_state_params.py">params</a>) -> <a href="./src/keysso/types/ai_tracker_get_state_response.py">AITrackerGetStateResponse</a></code>
 
 ## ID
 

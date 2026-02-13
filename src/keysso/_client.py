@@ -44,17 +44,17 @@ if TYPE_CHECKING:
         clustering,
         monitoring,
     )
+    from .resources.serp import SerpResource, AsyncSerpResource
     from .resources.limits import LimitsResource, AsyncLimitsResource
     from .resources.robots import RobotsResource, AsyncRobotsResource
     from .resources.zen.zen import ZenResource, AsyncZenResource
-    from .resources.serp.serp import SerpResource, AsyncSerpResource
+    from .resources.wordstat import WordstatResource, AsyncWordstatResource
+    from .resources.ai_tracker import AITrackerResource, AsyncAITrackerResource
+    from .resources.clustering import ClusteringResource, AsyncClusteringResource
+    from .resources.monitoring import MonitoringResource, AsyncMonitoringResource
     from .resources.tools.tools import ToolsResource, AsyncToolsResource
     from .resources.report.report import ReportResource, AsyncReportResource
     from .resources.projects.projects import ProjectsResource, AsyncProjectsResource
-    from .resources.wordstat.wordstat import WordstatResource, AsyncWordstatResource
-    from .resources.ai_tracker.ai_tracker import AITrackerResource, AsyncAITrackerResource
-    from .resources.clustering.clustering import ClusteringResource, AsyncClusteringResource
-    from .resources.monitoring.monitoring import MonitoringResource, AsyncMonitoringResource
 
 __all__ = ["Timeout", "Transport", "ProxiesTypes", "RequestOptions", "Keysso", "AsyncKeysso", "Client", "AsyncClient"]
 

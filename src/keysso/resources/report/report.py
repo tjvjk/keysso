@@ -6,6 +6,14 @@ from typing_extensions import Literal
 
 import httpx
 
+from .group import (
+    GroupResource,
+    AsyncGroupResource,
+    GroupResourceWithRawResponse,
+    AsyncGroupResourceWithRawResponse,
+    GroupResourceWithStreamingResponse,
+    AsyncGroupResourceWithStreamingResponse,
+)
 from .owner import (
     OwnerResource,
     AsyncOwnerResource,
@@ -37,14 +45,6 @@ from ..._response import (
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
-)
-from .group.group import (
-    GroupResource,
-    AsyncGroupResource,
-    GroupResourceWithRawResponse,
-    AsyncGroupResourceWithRawResponse,
-    GroupResourceWithStreamingResponse,
-    AsyncGroupResourceWithStreamingResponse,
 )
 from .simple.simple import (
     SimpleResource,
