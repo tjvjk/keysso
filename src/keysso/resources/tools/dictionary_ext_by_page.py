@@ -4,21 +4,21 @@ from __future__ import annotations
 
 import httpx
 
-from ...._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
-from ...._utils import maybe_transform, async_maybe_transform
-from ...._compat import cached_property
-from ...._resource import SyncAPIResource, AsyncAPIResource
-from ...._response import (
+from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
+from ..._utils import maybe_transform, async_maybe_transform
+from ..._compat import cached_property
+from ..._resource import SyncAPIResource, AsyncAPIResource
+from ..._response import (
     to_raw_response_wrapper,
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from ....types.tools import dictionary_ext_by_page_create_params
-from ...._base_client import make_request_options
-from ....types.report import Base
-from ....types.report.base import Base
-from ....types.tools.dictionary_ext_by_page_create_response import DictionaryExtByPageCreateResponse
+from ...types.tools import dictionary_ext_by_page_create_params
+from ..._base_client import make_request_options
+from ...types.report import Base
+from ...types.report.base import Base
+from ...types.tools.dictionary_ext_by_page_create_response import DictionaryExtByPageCreateResponse
 
 __all__ = ["DictionaryExtByPageResource", "AsyncDictionaryExtByPageResource"]
 
