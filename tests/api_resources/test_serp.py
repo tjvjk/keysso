@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestSerp:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: Keysso) -> None:
         serp = client.serp.create(
@@ -25,7 +25,7 @@ class TestSerp:
         )
         assert_matches_type(SerpCreateResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Keysso) -> None:
         serp = client.serp.create(
@@ -39,7 +39,7 @@ class TestSerp:
         )
         assert_matches_type(SerpCreateResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Keysso) -> None:
         response = client.serp.with_raw_response.create(
@@ -51,7 +51,7 @@ class TestSerp:
         serp = response.parse()
         assert_matches_type(SerpCreateResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Keysso) -> None:
         with client.serp.with_streaming_response.create(
@@ -65,13 +65,13 @@ class TestSerp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: Keysso) -> None:
         serp = client.serp.list()
         assert_matches_type(SerpListResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Keysso) -> None:
         serp = client.serp.list(
@@ -82,7 +82,7 @@ class TestSerp:
         )
         assert_matches_type(SerpListResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Keysso) -> None:
         response = client.serp.with_raw_response.list()
@@ -92,7 +92,7 @@ class TestSerp:
         serp = response.parse()
         assert_matches_type(SerpListResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Keysso) -> None:
         with client.serp.with_streaming_response.list() as response:
@@ -110,7 +110,7 @@ class TestAsyncSerp:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncKeysso) -> None:
         serp = await async_client.serp.create(
@@ -118,7 +118,7 @@ class TestAsyncSerp:
         )
         assert_matches_type(SerpCreateResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncKeysso) -> None:
         serp = await async_client.serp.create(
@@ -132,7 +132,7 @@ class TestAsyncSerp:
         )
         assert_matches_type(SerpCreateResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncKeysso) -> None:
         response = await async_client.serp.with_raw_response.create(
@@ -144,7 +144,7 @@ class TestAsyncSerp:
         serp = await response.parse()
         assert_matches_type(SerpCreateResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncKeysso) -> None:
         async with async_client.serp.with_streaming_response.create(
@@ -158,13 +158,13 @@ class TestAsyncSerp:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncKeysso) -> None:
         serp = await async_client.serp.list()
         assert_matches_type(SerpListResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncKeysso) -> None:
         serp = await async_client.serp.list(
@@ -175,7 +175,7 @@ class TestAsyncSerp:
         )
         assert_matches_type(SerpListResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncKeysso) -> None:
         response = await async_client.serp.with_raw_response.list()
@@ -185,7 +185,7 @@ class TestAsyncSerp:
         serp = await response.parse()
         assert_matches_type(SerpListResponse, serp, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncKeysso) -> None:
         async with async_client.serp.with_streaming_response.list() as response:

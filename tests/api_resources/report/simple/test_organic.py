@@ -23,7 +23,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestOrganic:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_ai_answers(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_ai_answers(
@@ -31,7 +31,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveAIAnswersResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_ai_answers_with_all_params(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_ai_answers(
@@ -44,7 +44,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveAIAnswersResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_ai_answers(self, client: Keysso) -> None:
         response = client.report.simple.organic.with_raw_response.retrieve_ai_answers(
@@ -56,7 +56,7 @@ class TestOrganic:
         organic = response.parse()
         assert_matches_type(OrganicRetrieveAIAnswersResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_ai_answers(self, client: Keysso) -> None:
         with client.report.simple.organic.with_streaming_response.retrieve_ai_answers(
@@ -70,7 +70,7 @@ class TestOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_concurent_pages(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_concurent_pages(
@@ -79,7 +79,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_concurent_pages_with_all_params(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_concurent_pages(
@@ -93,7 +93,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_concurent_pages(self, client: Keysso) -> None:
         response = client.report.simple.organic.with_raw_response.retrieve_concurent_pages(
@@ -106,7 +106,7 @@ class TestOrganic:
         organic = response.parse()
         assert_matches_type(OrganicRetrieveConcurentPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_concurent_pages(self, client: Keysso) -> None:
         with client.report.simple.organic.with_streaming_response.retrieve_concurent_pages(
@@ -121,7 +121,7 @@ class TestOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_concurents(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_concurents(
@@ -129,7 +129,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_concurents_with_all_params(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_concurents(
@@ -143,7 +143,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_concurents(self, client: Keysso) -> None:
         response = client.report.simple.organic.with_raw_response.retrieve_concurents(
@@ -155,7 +155,7 @@ class TestOrganic:
         organic = response.parse()
         assert_matches_type(OrganicRetrieveConcurentsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_concurents(self, client: Keysso) -> None:
         with client.report.simple.organic.with_streaming_response.retrieve_concurents(
@@ -169,7 +169,7 @@ class TestOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_lost_keywords(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_lost_keywords(
@@ -177,7 +177,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveLostKeywordsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_lost_keywords_with_all_params(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_lost_keywords(
@@ -190,7 +190,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveLostKeywordsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_lost_keywords(self, client: Keysso) -> None:
         response = client.report.simple.organic.with_raw_response.retrieve_lost_keywords(
@@ -202,7 +202,7 @@ class TestOrganic:
         organic = response.parse()
         assert_matches_type(OrganicRetrieveLostKeywordsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_lost_keywords(self, client: Keysso) -> None:
         with client.report.simple.organic.with_streaming_response.retrieve_lost_keywords(
@@ -216,7 +216,7 @@ class TestOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_lost_pages(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_lost_pages(
@@ -224,7 +224,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveLostPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_lost_pages_with_all_params(self, client: Keysso) -> None:
         organic = client.report.simple.organic.retrieve_lost_pages(
@@ -237,7 +237,7 @@ class TestOrganic:
         )
         assert_matches_type(OrganicRetrieveLostPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_lost_pages(self, client: Keysso) -> None:
         response = client.report.simple.organic.with_raw_response.retrieve_lost_pages(
@@ -249,7 +249,7 @@ class TestOrganic:
         organic = response.parse()
         assert_matches_type(OrganicRetrieveLostPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_lost_pages(self, client: Keysso) -> None:
         with client.report.simple.organic.with_streaming_response.retrieve_lost_pages(
@@ -269,7 +269,7 @@ class TestAsyncOrganic:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_ai_answers(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_ai_answers(
@@ -277,7 +277,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveAIAnswersResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_ai_answers_with_all_params(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_ai_answers(
@@ -290,7 +290,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveAIAnswersResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_ai_answers(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.organic.with_raw_response.retrieve_ai_answers(
@@ -302,7 +302,7 @@ class TestAsyncOrganic:
         organic = await response.parse()
         assert_matches_type(OrganicRetrieveAIAnswersResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_ai_answers(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.organic.with_streaming_response.retrieve_ai_answers(
@@ -316,7 +316,7 @@ class TestAsyncOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_concurent_pages(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_concurent_pages(
@@ -325,7 +325,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_concurent_pages_with_all_params(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_concurent_pages(
@@ -339,7 +339,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_concurent_pages(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.organic.with_raw_response.retrieve_concurent_pages(
@@ -352,7 +352,7 @@ class TestAsyncOrganic:
         organic = await response.parse()
         assert_matches_type(OrganicRetrieveConcurentPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_concurent_pages(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.organic.with_streaming_response.retrieve_concurent_pages(
@@ -367,7 +367,7 @@ class TestAsyncOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_concurents(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_concurents(
@@ -375,7 +375,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_concurents_with_all_params(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_concurents(
@@ -389,7 +389,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveConcurentsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_concurents(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.organic.with_raw_response.retrieve_concurents(
@@ -401,7 +401,7 @@ class TestAsyncOrganic:
         organic = await response.parse()
         assert_matches_type(OrganicRetrieveConcurentsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_concurents(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.organic.with_streaming_response.retrieve_concurents(
@@ -415,7 +415,7 @@ class TestAsyncOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_lost_keywords(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_lost_keywords(
@@ -423,7 +423,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveLostKeywordsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_lost_keywords_with_all_params(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_lost_keywords(
@@ -436,7 +436,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveLostKeywordsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_lost_keywords(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.organic.with_raw_response.retrieve_lost_keywords(
@@ -448,7 +448,7 @@ class TestAsyncOrganic:
         organic = await response.parse()
         assert_matches_type(OrganicRetrieveLostKeywordsResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_lost_keywords(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.organic.with_streaming_response.retrieve_lost_keywords(
@@ -462,7 +462,7 @@ class TestAsyncOrganic:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_lost_pages(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_lost_pages(
@@ -470,7 +470,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveLostPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_lost_pages_with_all_params(self, async_client: AsyncKeysso) -> None:
         organic = await async_client.report.simple.organic.retrieve_lost_pages(
@@ -483,7 +483,7 @@ class TestAsyncOrganic:
         )
         assert_matches_type(OrganicRetrieveLostPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_lost_pages(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.organic.with_raw_response.retrieve_lost_pages(
@@ -495,7 +495,7 @@ class TestAsyncOrganic:
         organic = await response.parse()
         assert_matches_type(OrganicRetrieveLostPagesResponse, organic, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_lost_pages(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.organic.with_streaming_response.retrieve_lost_pages(

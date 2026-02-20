@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestAds:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Keysso) -> None:
         ad = client.report.simple.context.ads.retrieve(
@@ -29,7 +29,7 @@ class TestAds:
         )
         assert_matches_type(AdRetrieveResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: Keysso) -> None:
         ad = client.report.simple.context.ads.retrieve(
@@ -43,7 +43,7 @@ class TestAds:
         )
         assert_matches_type(AdRetrieveResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Keysso) -> None:
         response = client.report.simple.context.ads.with_raw_response.retrieve(
@@ -55,7 +55,7 @@ class TestAds:
         ad = response.parse()
         assert_matches_type(AdRetrieveResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Keysso) -> None:
         with client.report.simple.context.ads.with_streaming_response.retrieve(
@@ -69,7 +69,7 @@ class TestAds:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_facts(self, client: Keysso) -> None:
         ad = client.report.simple.context.ads.retrieve_facts(
@@ -77,7 +77,7 @@ class TestAds:
         )
         assert_matches_type(AdRetrieveFactsResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_facts_with_all_params(self, client: Keysso) -> None:
         ad = client.report.simple.context.ads.retrieve_facts(
@@ -90,7 +90,7 @@ class TestAds:
         )
         assert_matches_type(AdRetrieveFactsResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_facts(self, client: Keysso) -> None:
         response = client.report.simple.context.ads.with_raw_response.retrieve_facts(
@@ -102,7 +102,7 @@ class TestAds:
         ad = response.parse()
         assert_matches_type(AdRetrieveFactsResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_facts(self, client: Keysso) -> None:
         with client.report.simple.context.ads.with_streaming_response.retrieve_facts(
@@ -116,7 +116,7 @@ class TestAds:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_links(self, client: Keysso) -> None:
         ad = client.report.simple.context.ads.retrieve_links(
@@ -124,7 +124,7 @@ class TestAds:
         )
         assert_matches_type(AdRetrieveLinksResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_links_with_all_params(self, client: Keysso) -> None:
         ad = client.report.simple.context.ads.retrieve_links(
@@ -137,7 +137,7 @@ class TestAds:
         )
         assert_matches_type(AdRetrieveLinksResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_links(self, client: Keysso) -> None:
         response = client.report.simple.context.ads.with_raw_response.retrieve_links(
@@ -149,7 +149,7 @@ class TestAds:
         ad = response.parse()
         assert_matches_type(AdRetrieveLinksResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_links(self, client: Keysso) -> None:
         with client.report.simple.context.ads.with_streaming_response.retrieve_links(
@@ -169,7 +169,7 @@ class TestAsyncAds:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncKeysso) -> None:
         ad = await async_client.report.simple.context.ads.retrieve(
@@ -177,7 +177,7 @@ class TestAsyncAds:
         )
         assert_matches_type(AdRetrieveResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncKeysso) -> None:
         ad = await async_client.report.simple.context.ads.retrieve(
@@ -191,7 +191,7 @@ class TestAsyncAds:
         )
         assert_matches_type(AdRetrieveResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.context.ads.with_raw_response.retrieve(
@@ -203,7 +203,7 @@ class TestAsyncAds:
         ad = await response.parse()
         assert_matches_type(AdRetrieveResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.context.ads.with_streaming_response.retrieve(
@@ -217,7 +217,7 @@ class TestAsyncAds:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_facts(self, async_client: AsyncKeysso) -> None:
         ad = await async_client.report.simple.context.ads.retrieve_facts(
@@ -225,7 +225,7 @@ class TestAsyncAds:
         )
         assert_matches_type(AdRetrieveFactsResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_facts_with_all_params(self, async_client: AsyncKeysso) -> None:
         ad = await async_client.report.simple.context.ads.retrieve_facts(
@@ -238,7 +238,7 @@ class TestAsyncAds:
         )
         assert_matches_type(AdRetrieveFactsResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_facts(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.context.ads.with_raw_response.retrieve_facts(
@@ -250,7 +250,7 @@ class TestAsyncAds:
         ad = await response.parse()
         assert_matches_type(AdRetrieveFactsResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_facts(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.context.ads.with_streaming_response.retrieve_facts(
@@ -264,7 +264,7 @@ class TestAsyncAds:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_links(self, async_client: AsyncKeysso) -> None:
         ad = await async_client.report.simple.context.ads.retrieve_links(
@@ -272,7 +272,7 @@ class TestAsyncAds:
         )
         assert_matches_type(AdRetrieveLinksResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_links_with_all_params(self, async_client: AsyncKeysso) -> None:
         ad = await async_client.report.simple.context.ads.retrieve_links(
@@ -285,7 +285,7 @@ class TestAsyncAds:
         )
         assert_matches_type(AdRetrieveLinksResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_links(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.context.ads.with_raw_response.retrieve_links(
@@ -297,7 +297,7 @@ class TestAsyncAds:
         ad = await response.parse()
         assert_matches_type(AdRetrieveLinksResponse, ad, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_links(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.context.ads.with_streaming_response.retrieve_links(

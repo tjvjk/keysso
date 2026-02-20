@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestZen:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_dashboard(self, client: Keysso) -> None:
         zen = client.zen.retrieve_dashboard(
@@ -25,7 +25,7 @@ class TestZen:
         )
         assert_matches_type(ZenRetrieveDashboardResponse, zen, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_dashboard(self, client: Keysso) -> None:
         response = client.zen.with_raw_response.retrieve_dashboard(
@@ -37,7 +37,7 @@ class TestZen:
         zen = response.parse()
         assert_matches_type(ZenRetrieveDashboardResponse, zen, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_dashboard(self, client: Keysso) -> None:
         with client.zen.with_streaming_response.retrieve_dashboard(
@@ -57,7 +57,7 @@ class TestAsyncZen:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_dashboard(self, async_client: AsyncKeysso) -> None:
         zen = await async_client.zen.retrieve_dashboard(
@@ -65,7 +65,7 @@ class TestAsyncZen:
         )
         assert_matches_type(ZenRetrieveDashboardResponse, zen, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_dashboard(self, async_client: AsyncKeysso) -> None:
         response = await async_client.zen.with_raw_response.retrieve_dashboard(
@@ -77,7 +77,7 @@ class TestAsyncZen:
         zen = await response.parse()
         assert_matches_type(ZenRetrieveDashboardResponse, zen, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_dashboard(self, async_client: AsyncKeysso) -> None:
         async with async_client.zen.with_streaming_response.retrieve_dashboard(
