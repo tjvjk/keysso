@@ -23,7 +23,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestSimple:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_domain_ad_history(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_domain_ad_history(
@@ -31,7 +31,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveDomainAdHistoryResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_domain_ad_history_with_all_params(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_domain_ad_history(
@@ -40,7 +40,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveDomainAdHistoryResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_domain_ad_history(self, client: Keysso) -> None:
         response = client.report.simple.with_raw_response.retrieve_domain_ad_history(
@@ -52,7 +52,7 @@ class TestSimple:
         simple = response.parse()
         assert_matches_type(SimpleRetrieveDomainAdHistoryResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_domain_ad_history(self, client: Keysso) -> None:
         with client.report.simple.with_streaming_response.retrieve_domain_ad_history(
@@ -66,7 +66,7 @@ class TestSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_domain_dashboard(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_domain_dashboard(
@@ -74,7 +74,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveDomainDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_domain_dashboard_with_all_params(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_domain_dashboard(
@@ -83,7 +83,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveDomainDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_domain_dashboard(self, client: Keysso) -> None:
         response = client.report.simple.with_raw_response.retrieve_domain_dashboard(
@@ -95,7 +95,7 @@ class TestSimple:
         simple = response.parse()
         assert_matches_type(SimpleRetrieveDomainDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_domain_dashboard(self, client: Keysso) -> None:
         with client.report.simple.with_streaming_response.retrieve_domain_dashboard(
@@ -109,7 +109,7 @@ class TestSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_keyword_dashboard(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_keyword_dashboard(
@@ -117,7 +117,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveKeywordDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_keyword_dashboard_with_all_params(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_keyword_dashboard(
@@ -126,7 +126,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveKeywordDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_keyword_dashboard(self, client: Keysso) -> None:
         response = client.report.simple.with_raw_response.retrieve_keyword_dashboard(
@@ -138,7 +138,7 @@ class TestSimple:
         simple = response.parse()
         assert_matches_type(SimpleRetrieveKeywordDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_keyword_dashboard(self, client: Keysso) -> None:
         with client.report.simple.with_streaming_response.retrieve_keyword_dashboard(
@@ -152,7 +152,7 @@ class TestSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_similarkeys(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_similarkeys(
@@ -160,7 +160,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveSimilarkeysResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_similarkeys_with_all_params(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_similarkeys(
@@ -173,7 +173,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveSimilarkeysResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_similarkeys(self, client: Keysso) -> None:
         response = client.report.simple.with_raw_response.retrieve_similarkeys(
@@ -185,7 +185,7 @@ class TestSimple:
         simple = response.parse()
         assert_matches_type(SimpleRetrieveSimilarkeysResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_similarkeys(self, client: Keysso) -> None:
         with client.report.simple.with_streaming_response.retrieve_similarkeys(
@@ -199,7 +199,7 @@ class TestSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_top_domain_visibility(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_top_domain_visibility(
@@ -207,7 +207,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveTopDomainVisibilityResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_top_domain_visibility_with_all_params(self, client: Keysso) -> None:
         simple = client.report.simple.retrieve_top_domain_visibility(
@@ -219,7 +219,7 @@ class TestSimple:
         )
         assert_matches_type(SimpleRetrieveTopDomainVisibilityResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_top_domain_visibility(self, client: Keysso) -> None:
         response = client.report.simple.with_raw_response.retrieve_top_domain_visibility(
@@ -231,7 +231,7 @@ class TestSimple:
         simple = response.parse()
         assert_matches_type(SimpleRetrieveTopDomainVisibilityResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_top_domain_visibility(self, client: Keysso) -> None:
         with client.report.simple.with_streaming_response.retrieve_top_domain_visibility(
@@ -251,7 +251,7 @@ class TestAsyncSimple:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_domain_ad_history(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_domain_ad_history(
@@ -259,7 +259,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveDomainAdHistoryResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_domain_ad_history_with_all_params(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_domain_ad_history(
@@ -268,7 +268,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveDomainAdHistoryResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_domain_ad_history(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.with_raw_response.retrieve_domain_ad_history(
@@ -280,7 +280,7 @@ class TestAsyncSimple:
         simple = await response.parse()
         assert_matches_type(SimpleRetrieveDomainAdHistoryResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_domain_ad_history(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.with_streaming_response.retrieve_domain_ad_history(
@@ -294,7 +294,7 @@ class TestAsyncSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_domain_dashboard(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_domain_dashboard(
@@ -302,7 +302,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveDomainDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_domain_dashboard_with_all_params(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_domain_dashboard(
@@ -311,7 +311,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveDomainDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_domain_dashboard(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.with_raw_response.retrieve_domain_dashboard(
@@ -323,7 +323,7 @@ class TestAsyncSimple:
         simple = await response.parse()
         assert_matches_type(SimpleRetrieveDomainDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_domain_dashboard(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.with_streaming_response.retrieve_domain_dashboard(
@@ -337,7 +337,7 @@ class TestAsyncSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_keyword_dashboard(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_keyword_dashboard(
@@ -345,7 +345,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveKeywordDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_keyword_dashboard_with_all_params(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_keyword_dashboard(
@@ -354,7 +354,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveKeywordDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_keyword_dashboard(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.with_raw_response.retrieve_keyword_dashboard(
@@ -366,7 +366,7 @@ class TestAsyncSimple:
         simple = await response.parse()
         assert_matches_type(SimpleRetrieveKeywordDashboardResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_keyword_dashboard(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.with_streaming_response.retrieve_keyword_dashboard(
@@ -380,7 +380,7 @@ class TestAsyncSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_similarkeys(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_similarkeys(
@@ -388,7 +388,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveSimilarkeysResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_similarkeys_with_all_params(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_similarkeys(
@@ -401,7 +401,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveSimilarkeysResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_similarkeys(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.with_raw_response.retrieve_similarkeys(
@@ -413,7 +413,7 @@ class TestAsyncSimple:
         simple = await response.parse()
         assert_matches_type(SimpleRetrieveSimilarkeysResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_similarkeys(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.with_streaming_response.retrieve_similarkeys(
@@ -427,7 +427,7 @@ class TestAsyncSimple:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_top_domain_visibility(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_top_domain_visibility(
@@ -435,7 +435,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveTopDomainVisibilityResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_top_domain_visibility_with_all_params(self, async_client: AsyncKeysso) -> None:
         simple = await async_client.report.simple.retrieve_top_domain_visibility(
@@ -447,7 +447,7 @@ class TestAsyncSimple:
         )
         assert_matches_type(SimpleRetrieveTopDomainVisibilityResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_top_domain_visibility(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.with_raw_response.retrieve_top_domain_visibility(
@@ -459,7 +459,7 @@ class TestAsyncSimple:
         simple = await response.parse()
         assert_matches_type(SimpleRetrieveTopDomainVisibilityResponse, simple, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_top_domain_visibility(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.with_streaming_response.retrieve_top_domain_visibility(

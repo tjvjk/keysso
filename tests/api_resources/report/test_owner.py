@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestOwner:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_subdomains(self, client: Keysso) -> None:
         owner = client.report.owner.retrieve_subdomains(
@@ -25,7 +25,7 @@ class TestOwner:
         )
         assert_matches_type(OwnerRetrieveSubdomainsResponse, owner, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_subdomains_with_all_params(self, client: Keysso) -> None:
         owner = client.report.owner.retrieve_subdomains(
@@ -38,7 +38,7 @@ class TestOwner:
         )
         assert_matches_type(OwnerRetrieveSubdomainsResponse, owner, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_subdomains(self, client: Keysso) -> None:
         response = client.report.owner.with_raw_response.retrieve_subdomains(
@@ -50,7 +50,7 @@ class TestOwner:
         owner = response.parse()
         assert_matches_type(OwnerRetrieveSubdomainsResponse, owner, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_subdomains(self, client: Keysso) -> None:
         with client.report.owner.with_streaming_response.retrieve_subdomains(
@@ -70,7 +70,7 @@ class TestAsyncOwner:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_subdomains(self, async_client: AsyncKeysso) -> None:
         owner = await async_client.report.owner.retrieve_subdomains(
@@ -78,7 +78,7 @@ class TestAsyncOwner:
         )
         assert_matches_type(OwnerRetrieveSubdomainsResponse, owner, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_subdomains_with_all_params(self, async_client: AsyncKeysso) -> None:
         owner = await async_client.report.owner.retrieve_subdomains(
@@ -91,7 +91,7 @@ class TestAsyncOwner:
         )
         assert_matches_type(OwnerRetrieveSubdomainsResponse, owner, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_subdomains(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.owner.with_raw_response.retrieve_subdomains(
@@ -103,7 +103,7 @@ class TestAsyncOwner:
         owner = await response.parse()
         assert_matches_type(OwnerRetrieveSubdomainsResponse, owner, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_subdomains(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.owner.with_streaming_response.retrieve_subdomains(

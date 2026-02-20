@@ -28,7 +28,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestTools:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_check_top(self, client: Keysso) -> None:
         tool = client.tools.check_top(
@@ -36,7 +36,7 @@ class TestTools:
         )
         assert_matches_type(ToolCheckTopResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_check_top_with_all_params(self, client: Keysso) -> None:
         tool = client.tools.check_top(
@@ -45,7 +45,7 @@ class TestTools:
         )
         assert_matches_type(ToolCheckTopResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_check_top(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.check_top(
@@ -57,7 +57,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolCheckTopResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_check_top(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.check_top(
@@ -71,7 +71,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_check_top_concurents_domains(self, client: Keysso) -> None:
         tool = client.tools.check_top_concurents_domains(
@@ -79,7 +79,7 @@ class TestTools:
         )
         assert_matches_type(ToolCheckTopConcurentsDomainsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_check_top_concurents_domains_with_all_params(self, client: Keysso) -> None:
         tool = client.tools.check_top_concurents_domains(
@@ -90,7 +90,7 @@ class TestTools:
         )
         assert_matches_type(ToolCheckTopConcurentsDomainsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_check_top_concurents_domains(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.check_top_concurents_domains(
@@ -102,7 +102,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolCheckTopConcurentsDomainsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_check_top_concurents_domains(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.check_top_concurents_domains(
@@ -116,7 +116,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_check_top_concurents_urls(self, client: Keysso) -> None:
         tool = client.tools.check_top_concurents_urls(
@@ -124,7 +124,7 @@ class TestTools:
         )
         assert_matches_type(ToolCheckTopConcurentsURLsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_check_top_concurents_urls_with_all_params(self, client: Keysso) -> None:
         tool = client.tools.check_top_concurents_urls(
@@ -135,7 +135,7 @@ class TestTools:
         )
         assert_matches_type(ToolCheckTopConcurentsURLsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_check_top_concurents_urls(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.check_top_concurents_urls(
@@ -147,7 +147,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolCheckTopConcurentsURLsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_check_top_concurents_urls(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.check_top_concurents_urls(
@@ -161,7 +161,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_combine(self, client: Keysso) -> None:
         tool = client.tools.combine(
@@ -169,7 +169,7 @@ class TestTools:
         )
         assert_matches_type(str, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_combine_with_all_params(self, client: Keysso) -> None:
         tool = client.tools.combine(
@@ -178,7 +178,7 @@ class TestTools:
         )
         assert_matches_type(str, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_combine(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.combine(
@@ -190,7 +190,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(str, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_combine(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.combine(
@@ -204,7 +204,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare(self, client: Keysso) -> None:
         tool = client.tools.compare(
@@ -214,7 +214,7 @@ class TestTools:
         )
         assert_matches_type(ToolCompareResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_compare(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.compare(
@@ -228,7 +228,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolCompareResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_compare(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.compare(
@@ -244,7 +244,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_domains_batch(self, client: Keysso) -> None:
         tool = client.tools.create_domains_batch(
@@ -252,7 +252,7 @@ class TestTools:
         )
         assert_matches_type(ToolCreateDomainsBatchResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_domains_batch_with_all_params(self, client: Keysso) -> None:
         tool = client.tools.create_domains_batch(
@@ -267,7 +267,7 @@ class TestTools:
         )
         assert_matches_type(ToolCreateDomainsBatchResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_domains_batch(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.create_domains_batch(
@@ -279,7 +279,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolCreateDomainsBatchResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_domains_batch(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.create_domains_batch(
@@ -293,7 +293,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_history_serp(self, client: Keysso) -> None:
         tool = client.tools.create_history_serp(
@@ -301,7 +301,7 @@ class TestTools:
         )
         assert_matches_type(ToolCreateHistorySerpResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_history_serp_with_all_params(self, client: Keysso) -> None:
         tool = client.tools.create_history_serp(
@@ -310,7 +310,7 @@ class TestTools:
         )
         assert_matches_type(ToolCreateHistorySerpResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_history_serp(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.create_history_serp(
@@ -322,7 +322,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolCreateHistorySerpResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_history_serp(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.create_history_serp(
@@ -336,7 +336,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_unique(self, client: Keysso) -> None:
         tool = client.tools.create_unique(
@@ -344,7 +344,7 @@ class TestTools:
         )
         assert_matches_type(ToolCreateUniqueResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_unique(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.create_unique(
@@ -356,7 +356,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolCreateUniqueResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_unique(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.create_unique(
@@ -370,7 +370,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete_double(self, client: Keysso) -> None:
         tool = client.tools.delete_double(
@@ -378,7 +378,7 @@ class TestTools:
         )
         assert_matches_type(ToolDeleteDoubleResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete_double(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.delete_double(
@@ -390,7 +390,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolDeleteDoubleResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete_double(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.delete_double(
@@ -404,7 +404,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_site_themes(self, client: Keysso) -> None:
         tool = client.tools.list_site_themes(
@@ -412,7 +412,7 @@ class TestTools:
         )
         assert_matches_type(ToolListSiteThemesResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_site_themes_with_all_params(self, client: Keysso) -> None:
         tool = client.tools.list_site_themes(
@@ -435,7 +435,7 @@ class TestTools:
         )
         assert_matches_type(ToolListSiteThemesResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_site_themes(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.list_site_themes(
@@ -447,7 +447,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolListSiteThemesResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_site_themes(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.list_site_themes(
@@ -461,7 +461,7 @@ class TestTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_suggest(self, client: Keysso) -> None:
         tool = client.tools.suggest(
@@ -470,7 +470,7 @@ class TestTools:
         )
         assert_matches_type(ToolSuggestResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_suggest(self, client: Keysso) -> None:
         response = client.tools.with_raw_response.suggest(
@@ -483,7 +483,7 @@ class TestTools:
         tool = response.parse()
         assert_matches_type(ToolSuggestResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_suggest(self, client: Keysso) -> None:
         with client.tools.with_streaming_response.suggest(
@@ -504,7 +504,7 @@ class TestAsyncTools:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_check_top(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.check_top(
@@ -512,7 +512,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCheckTopResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_check_top_with_all_params(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.check_top(
@@ -521,7 +521,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCheckTopResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_check_top(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.check_top(
@@ -533,7 +533,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolCheckTopResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_check_top(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.check_top(
@@ -547,7 +547,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_check_top_concurents_domains(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.check_top_concurents_domains(
@@ -555,7 +555,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCheckTopConcurentsDomainsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_check_top_concurents_domains_with_all_params(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.check_top_concurents_domains(
@@ -566,7 +566,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCheckTopConcurentsDomainsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_check_top_concurents_domains(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.check_top_concurents_domains(
@@ -578,7 +578,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolCheckTopConcurentsDomainsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_check_top_concurents_domains(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.check_top_concurents_domains(
@@ -592,7 +592,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_check_top_concurents_urls(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.check_top_concurents_urls(
@@ -600,7 +600,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCheckTopConcurentsURLsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_check_top_concurents_urls_with_all_params(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.check_top_concurents_urls(
@@ -611,7 +611,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCheckTopConcurentsURLsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_check_top_concurents_urls(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.check_top_concurents_urls(
@@ -623,7 +623,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolCheckTopConcurentsURLsResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_check_top_concurents_urls(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.check_top_concurents_urls(
@@ -637,7 +637,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_combine(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.combine(
@@ -645,7 +645,7 @@ class TestAsyncTools:
         )
         assert_matches_type(str, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_combine_with_all_params(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.combine(
@@ -654,7 +654,7 @@ class TestAsyncTools:
         )
         assert_matches_type(str, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_combine(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.combine(
@@ -666,7 +666,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(str, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_combine(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.combine(
@@ -680,7 +680,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.compare(
@@ -690,7 +690,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCompareResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_compare(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.compare(
@@ -704,7 +704,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolCompareResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_compare(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.compare(
@@ -720,7 +720,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_domains_batch(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.create_domains_batch(
@@ -728,7 +728,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCreateDomainsBatchResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_domains_batch_with_all_params(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.create_domains_batch(
@@ -743,7 +743,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCreateDomainsBatchResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_domains_batch(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.create_domains_batch(
@@ -755,7 +755,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolCreateDomainsBatchResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_domains_batch(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.create_domains_batch(
@@ -769,7 +769,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_history_serp(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.create_history_serp(
@@ -777,7 +777,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCreateHistorySerpResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_history_serp_with_all_params(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.create_history_serp(
@@ -786,7 +786,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCreateHistorySerpResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_history_serp(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.create_history_serp(
@@ -798,7 +798,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolCreateHistorySerpResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_history_serp(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.create_history_serp(
@@ -812,7 +812,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_unique(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.create_unique(
@@ -820,7 +820,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolCreateUniqueResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_unique(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.create_unique(
@@ -832,7 +832,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolCreateUniqueResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_unique(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.create_unique(
@@ -846,7 +846,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete_double(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.delete_double(
@@ -854,7 +854,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolDeleteDoubleResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete_double(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.delete_double(
@@ -866,7 +866,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolDeleteDoubleResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete_double(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.delete_double(
@@ -880,7 +880,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_site_themes(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.list_site_themes(
@@ -888,7 +888,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolListSiteThemesResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_site_themes_with_all_params(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.list_site_themes(
@@ -911,7 +911,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolListSiteThemesResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_site_themes(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.list_site_themes(
@@ -923,7 +923,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolListSiteThemesResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_site_themes(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.list_site_themes(
@@ -937,7 +937,7 @@ class TestAsyncTools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_suggest(self, async_client: AsyncKeysso) -> None:
         tool = await async_client.tools.suggest(
@@ -946,7 +946,7 @@ class TestAsyncTools:
         )
         assert_matches_type(ToolSuggestResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_suggest(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.with_raw_response.suggest(
@@ -959,7 +959,7 @@ class TestAsyncTools:
         tool = await response.parse()
         assert_matches_type(ToolSuggestResponse, tool, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_suggest(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.with_streaming_response.suggest(

@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestAIAnswers:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_state(self, client: Keysso) -> None:
         ai_answer = client.report.simple.ai_answers.retrieve_state(
@@ -25,7 +25,7 @@ class TestAIAnswers:
         )
         assert_matches_type(AIAnswerRetrieveStateResponse, ai_answer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_state_with_all_params(self, client: Keysso) -> None:
         ai_answer = client.report.simple.ai_answers.retrieve_state(
@@ -34,7 +34,7 @@ class TestAIAnswers:
         )
         assert_matches_type(AIAnswerRetrieveStateResponse, ai_answer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_state(self, client: Keysso) -> None:
         response = client.report.simple.ai_answers.with_raw_response.retrieve_state(
@@ -46,7 +46,7 @@ class TestAIAnswers:
         ai_answer = response.parse()
         assert_matches_type(AIAnswerRetrieveStateResponse, ai_answer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_state(self, client: Keysso) -> None:
         with client.report.simple.ai_answers.with_streaming_response.retrieve_state(
@@ -66,7 +66,7 @@ class TestAsyncAIAnswers:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_state(self, async_client: AsyncKeysso) -> None:
         ai_answer = await async_client.report.simple.ai_answers.retrieve_state(
@@ -74,7 +74,7 @@ class TestAsyncAIAnswers:
         )
         assert_matches_type(AIAnswerRetrieveStateResponse, ai_answer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_state_with_all_params(self, async_client: AsyncKeysso) -> None:
         ai_answer = await async_client.report.simple.ai_answers.retrieve_state(
@@ -83,7 +83,7 @@ class TestAsyncAIAnswers:
         )
         assert_matches_type(AIAnswerRetrieveStateResponse, ai_answer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_state(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.ai_answers.with_raw_response.retrieve_state(
@@ -95,7 +95,7 @@ class TestAsyncAIAnswers:
         ai_answer = await response.parse()
         assert_matches_type(AIAnswerRetrieveStateResponse, ai_answer, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_state(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.ai_answers.with_streaming_response.retrieve_state(

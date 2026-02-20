@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestContext:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_concurents(self, client: Keysso) -> None:
         context = client.report.simple.context.retrieve_concurents(
@@ -25,7 +25,7 @@ class TestContext:
         )
         assert_matches_type(ContextRetrieveConcurentsResponse, context, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_concurents_with_all_params(self, client: Keysso) -> None:
         context = client.report.simple.context.retrieve_concurents(
@@ -38,7 +38,7 @@ class TestContext:
         )
         assert_matches_type(ContextRetrieveConcurentsResponse, context, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_concurents(self, client: Keysso) -> None:
         response = client.report.simple.context.with_raw_response.retrieve_concurents(
@@ -50,7 +50,7 @@ class TestContext:
         context = response.parse()
         assert_matches_type(ContextRetrieveConcurentsResponse, context, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_concurents(self, client: Keysso) -> None:
         with client.report.simple.context.with_streaming_response.retrieve_concurents(
@@ -70,7 +70,7 @@ class TestAsyncContext:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_concurents(self, async_client: AsyncKeysso) -> None:
         context = await async_client.report.simple.context.retrieve_concurents(
@@ -78,7 +78,7 @@ class TestAsyncContext:
         )
         assert_matches_type(ContextRetrieveConcurentsResponse, context, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_concurents_with_all_params(self, async_client: AsyncKeysso) -> None:
         context = await async_client.report.simple.context.retrieve_concurents(
@@ -91,7 +91,7 @@ class TestAsyncContext:
         )
         assert_matches_type(ContextRetrieveConcurentsResponse, context, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_concurents(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.context.with_raw_response.retrieve_concurents(
@@ -103,7 +103,7 @@ class TestAsyncContext:
         context = await response.parse()
         assert_matches_type(ContextRetrieveConcurentsResponse, context, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_concurents(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.context.with_streaming_response.retrieve_concurents(
