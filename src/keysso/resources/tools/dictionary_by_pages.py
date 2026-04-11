@@ -2,68 +2,68 @@
 
 from __future__ import annotations
 
-from typing_extensions import Literal
+from typing import Iterable
 
 import httpx
 
-from ...._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
-from ...._utils import maybe_transform, async_maybe_transform
-from ...._compat import cached_property
-from ...._resource import SyncAPIResource, AsyncAPIResource
-from ...._response import (
+from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
+from ..._utils import maybe_transform, async_maybe_transform
+from ..._compat import cached_property
+from ..._resource import SyncAPIResource, AsyncAPIResource
+from ..._response import (
     to_raw_response_wrapper,
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from ....types.tools import keywords_by_page_create_params
-from ...._base_client import make_request_options
-from ....types.report import Base
-from ....types.report.base import Base
-from ....types.tools.keywords_by_page_create_response import KeywordsByPageCreateResponse
+from ...types.tools import dictionary_by_page_create_params
+from ..._base_client import make_request_options
+from ...types.report import Base
+from ...types.report.base import Base
+from ...types.tools.dictionary_by_page_create_response import DictionaryByPageCreateResponse
 
-__all__ = ["KeywordsByPagesResource", "AsyncKeywordsByPagesResource"]
+__all__ = ["DictionaryByPagesResource", "AsyncDictionaryByPagesResource"]
 
 
-class KeywordsByPagesResource(SyncAPIResource):
+class DictionaryByPagesResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> KeywordsByPagesResourceWithRawResponse:
+    def with_raw_response(self) -> DictionaryByPagesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
-        return KeywordsByPagesResourceWithRawResponse(self)
+        return DictionaryByPagesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> KeywordsByPagesResourceWithStreamingResponse:
+    def with_streaming_response(self) -> DictionaryByPagesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
-        return KeywordsByPagesResourceWithStreamingResponse(self)
+        return DictionaryByPagesResourceWithStreamingResponse(self)
 
     def create(
         self,
         *,
-        list: SequenceNotStr[str],
+        pages: Iterable[object],
         base: Base | Omit = omit,
-        top: Literal[10, 50] | Omit = omit,
+        config: dictionary_by_page_create_params.Config | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> KeywordsByPageCreateResponse:
+    ) -> DictionaryByPageCreateResponse:
         """
         Создание отчета и получение идентификатора, который понадобится в дальнейшем для
         взаимодействия с отчетом.
 
         Args:
-          list: Список запросов страниц
+          pages: Список страниц
 
           base: Региональная база данных, по которой происходит выборка `msk` - Яндекс: Москва
               `gru` - Google: Москва `zen` - Дзен `gkv` - Google: Киев `rnd` - Яндекс:
@@ -75,7 +75,7 @@ class KeywordsByPagesResource(SyncAPIResource):
               Санкт-Петербург `mns` - Яндекс: Минск `tmn` - Яндекс: Тюмень `gmns` - Google:
               Минск `tom` - Яндекс: Томск `gny` - Google: New York
 
-          top: Охват позиций
+          config: Настройки
 
           extra_headers: Send extra headers
 
@@ -86,61 +86,61 @@ class KeywordsByPagesResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._post(
-            "/tools/keywords_by_pages",
+            "/tools/dictionary-by-pages",
             body=maybe_transform(
                 {
-                    "list": list,
+                    "pages": pages,
                     "base": base,
-                    "top": top,
+                    "config": config,
                 },
-                keywords_by_page_create_params.KeywordsByPageCreateParams,
+                dictionary_by_page_create_params.DictionaryByPageCreateParams,
             ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=KeywordsByPageCreateResponse,
+            cast_to=DictionaryByPageCreateResponse,
         )
 
 
-class AsyncKeywordsByPagesResource(AsyncAPIResource):
+class AsyncDictionaryByPagesResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncKeywordsByPagesResourceWithRawResponse:
+    def with_raw_response(self) -> AsyncDictionaryByPagesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
-        return AsyncKeywordsByPagesResourceWithRawResponse(self)
+        return AsyncDictionaryByPagesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncKeywordsByPagesResourceWithStreamingResponse:
+    def with_streaming_response(self) -> AsyncDictionaryByPagesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
-        return AsyncKeywordsByPagesResourceWithStreamingResponse(self)
+        return AsyncDictionaryByPagesResourceWithStreamingResponse(self)
 
     async def create(
         self,
         *,
-        list: SequenceNotStr[str],
+        pages: Iterable[object],
         base: Base | Omit = omit,
-        top: Literal[10, 50] | Omit = omit,
+        config: dictionary_by_page_create_params.Config | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> KeywordsByPageCreateResponse:
+    ) -> DictionaryByPageCreateResponse:
         """
         Создание отчета и получение идентификатора, который понадобится в дальнейшем для
         взаимодействия с отчетом.
 
         Args:
-          list: Список запросов страниц
+          pages: Список страниц
 
           base: Региональная база данных, по которой происходит выборка `msk` - Яндекс: Москва
               `gru` - Google: Москва `zen` - Дзен `gkv` - Google: Киев `rnd` - Яндекс:
@@ -152,7 +152,7 @@ class AsyncKeywordsByPagesResource(AsyncAPIResource):
               Санкт-Петербург `mns` - Яндекс: Минск `tmn` - Яндекс: Тюмень `gmns` - Google:
               Минск `tom` - Яндекс: Томск `gny` - Google: New York
 
-          top: Охват позиций
+          config: Настройки
 
           extra_headers: Send extra headers
 
@@ -163,53 +163,53 @@ class AsyncKeywordsByPagesResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._post(
-            "/tools/keywords_by_pages",
+            "/tools/dictionary-by-pages",
             body=await async_maybe_transform(
                 {
-                    "list": list,
+                    "pages": pages,
                     "base": base,
-                    "top": top,
+                    "config": config,
                 },
-                keywords_by_page_create_params.KeywordsByPageCreateParams,
+                dictionary_by_page_create_params.DictionaryByPageCreateParams,
             ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=KeywordsByPageCreateResponse,
+            cast_to=DictionaryByPageCreateResponse,
         )
 
 
-class KeywordsByPagesResourceWithRawResponse:
-    def __init__(self, keywords_by_pages: KeywordsByPagesResource) -> None:
-        self._keywords_by_pages = keywords_by_pages
+class DictionaryByPagesResourceWithRawResponse:
+    def __init__(self, dictionary_by_pages: DictionaryByPagesResource) -> None:
+        self._dictionary_by_pages = dictionary_by_pages
 
         self.create = to_raw_response_wrapper(
-            keywords_by_pages.create,
+            dictionary_by_pages.create,
         )
 
 
-class AsyncKeywordsByPagesResourceWithRawResponse:
-    def __init__(self, keywords_by_pages: AsyncKeywordsByPagesResource) -> None:
-        self._keywords_by_pages = keywords_by_pages
+class AsyncDictionaryByPagesResourceWithRawResponse:
+    def __init__(self, dictionary_by_pages: AsyncDictionaryByPagesResource) -> None:
+        self._dictionary_by_pages = dictionary_by_pages
 
         self.create = async_to_raw_response_wrapper(
-            keywords_by_pages.create,
+            dictionary_by_pages.create,
         )
 
 
-class KeywordsByPagesResourceWithStreamingResponse:
-    def __init__(self, keywords_by_pages: KeywordsByPagesResource) -> None:
-        self._keywords_by_pages = keywords_by_pages
+class DictionaryByPagesResourceWithStreamingResponse:
+    def __init__(self, dictionary_by_pages: DictionaryByPagesResource) -> None:
+        self._dictionary_by_pages = dictionary_by_pages
 
         self.create = to_streamed_response_wrapper(
-            keywords_by_pages.create,
+            dictionary_by_pages.create,
         )
 
 
-class AsyncKeywordsByPagesResourceWithStreamingResponse:
-    def __init__(self, keywords_by_pages: AsyncKeywordsByPagesResource) -> None:
-        self._keywords_by_pages = keywords_by_pages
+class AsyncDictionaryByPagesResourceWithStreamingResponse:
+    def __init__(self, dictionary_by_pages: AsyncDictionaryByPagesResource) -> None:
+        self._dictionary_by_pages = dictionary_by_pages
 
         self.create = async_to_streamed_response_wrapper(
-            keywords_by_pages.create,
+            dictionary_by_pages.create,
         )

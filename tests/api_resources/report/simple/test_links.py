@@ -27,7 +27,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestLinks:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_domains_batch(self, client: Keysso) -> None:
         link = client.report.simple.links.domains_batch(
@@ -35,7 +35,7 @@ class TestLinks:
         )
         assert_matches_type(LinkDomainsBatchResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_domains_batch_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.domains_batch(
@@ -50,7 +50,7 @@ class TestLinks:
         )
         assert_matches_type(LinkDomainsBatchResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_domains_batch(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.domains_batch(
@@ -62,7 +62,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkDomainsBatchResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_domains_batch(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.domains_batch(
@@ -76,7 +76,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks(
@@ -84,7 +84,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks(
@@ -96,7 +96,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_backlinks(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_backlinks(
@@ -108,7 +108,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrieveBacklinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_backlinks(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_backlinks(
@@ -122,7 +122,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks_anchor(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks_anchor(
@@ -130,7 +130,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksAnchorResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks_anchor_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks_anchor(
@@ -142,7 +142,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksAnchorResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_backlinks_anchor(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_backlinks_anchor(
@@ -154,7 +154,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrieveBacklinksAnchorResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_backlinks_anchor(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_backlinks_anchor(
@@ -168,7 +168,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks_domains(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks_domains(
@@ -176,7 +176,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks_domains_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks_domains(
@@ -188,7 +188,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_backlinks_domains(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_backlinks_domains(
@@ -200,7 +200,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrieveBacklinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_backlinks_domains(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_backlinks_domains(
@@ -214,7 +214,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks_domains_view_domain(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks_domains_view_domain(
@@ -223,7 +223,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_backlinks_domains_view_domain_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_backlinks_domains_view_domain(
@@ -236,7 +236,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_backlinks_domains_view_domain(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_backlinks_domains_view_domain(
@@ -249,7 +249,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrieveBacklinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_backlinks_domains_view_domain(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_backlinks_domains_view_domain(
@@ -264,7 +264,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_outlinks(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_outlinks(
@@ -272,7 +272,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_outlinks_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_outlinks(
@@ -284,7 +284,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_outlinks(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_outlinks(
@@ -296,7 +296,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrieveOutlinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_outlinks(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_outlinks(
@@ -310,7 +310,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_outlinks_domains(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_outlinks_domains(
@@ -318,7 +318,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_outlinks_domains_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_outlinks_domains(
@@ -330,7 +330,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_outlinks_domains(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_outlinks_domains(
@@ -342,7 +342,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrieveOutlinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_outlinks_domains(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_outlinks_domains(
@@ -356,7 +356,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_outlinks_domains_view_domain(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_outlinks_domains_view_domain(
@@ -365,7 +365,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_outlinks_domains_view_domain_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_outlinks_domains_view_domain(
@@ -378,7 +378,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_outlinks_domains_view_domain(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_outlinks_domains_view_domain(
@@ -391,7 +391,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrieveOutlinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_outlinks_domains_view_domain(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_outlinks_domains_view_domain(
@@ -406,7 +406,7 @@ class TestLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_pages(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_pages(
@@ -414,7 +414,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrievePagesResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_pages_with_all_params(self, client: Keysso) -> None:
         link = client.report.simple.links.retrieve_pages(
@@ -426,7 +426,7 @@ class TestLinks:
         )
         assert_matches_type(LinkRetrievePagesResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_pages(self, client: Keysso) -> None:
         response = client.report.simple.links.with_raw_response.retrieve_pages(
@@ -438,7 +438,7 @@ class TestLinks:
         link = response.parse()
         assert_matches_type(LinkRetrievePagesResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_pages(self, client: Keysso) -> None:
         with client.report.simple.links.with_streaming_response.retrieve_pages(
@@ -458,7 +458,7 @@ class TestAsyncLinks:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_domains_batch(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.domains_batch(
@@ -466,7 +466,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkDomainsBatchResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_domains_batch_with_all_params(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.domains_batch(
@@ -481,7 +481,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkDomainsBatchResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_domains_batch(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.domains_batch(
@@ -493,7 +493,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkDomainsBatchResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_domains_batch(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.domains_batch(
@@ -507,7 +507,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_backlinks(
@@ -515,7 +515,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks_with_all_params(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_backlinks(
@@ -527,7 +527,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_backlinks(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_backlinks(
@@ -539,7 +539,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrieveBacklinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_backlinks(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_backlinks(
@@ -553,7 +553,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks_anchor(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_backlinks_anchor(
@@ -561,7 +561,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksAnchorResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks_anchor_with_all_params(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_backlinks_anchor(
@@ -573,7 +573,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksAnchorResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_backlinks_anchor(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_backlinks_anchor(
@@ -585,7 +585,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrieveBacklinksAnchorResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_backlinks_anchor(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_backlinks_anchor(
@@ -599,7 +599,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks_domains(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_backlinks_domains(
@@ -607,7 +607,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks_domains_with_all_params(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_backlinks_domains(
@@ -619,7 +619,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_backlinks_domains(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_backlinks_domains(
@@ -631,7 +631,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrieveBacklinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_backlinks_domains(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_backlinks_domains(
@@ -645,7 +645,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks_domains_view_domain(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_backlinks_domains_view_domain(
@@ -654,7 +654,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_backlinks_domains_view_domain_with_all_params(
         self, async_client: AsyncKeysso
@@ -669,7 +669,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveBacklinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_backlinks_domains_view_domain(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_backlinks_domains_view_domain(
@@ -682,7 +682,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrieveBacklinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_backlinks_domains_view_domain(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_backlinks_domains_view_domain(
@@ -697,7 +697,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_outlinks(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_outlinks(
@@ -705,7 +705,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_outlinks_with_all_params(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_outlinks(
@@ -717,7 +717,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_outlinks(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_outlinks(
@@ -729,7 +729,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrieveOutlinksResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_outlinks(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_outlinks(
@@ -743,7 +743,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_outlinks_domains(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_outlinks_domains(
@@ -751,7 +751,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_outlinks_domains_with_all_params(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_outlinks_domains(
@@ -763,7 +763,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_outlinks_domains(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_outlinks_domains(
@@ -775,7 +775,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrieveOutlinksDomainsResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_outlinks_domains(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_outlinks_domains(
@@ -789,7 +789,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_outlinks_domains_view_domain(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_outlinks_domains_view_domain(
@@ -798,7 +798,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_outlinks_domains_view_domain_with_all_params(
         self, async_client: AsyncKeysso
@@ -813,7 +813,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrieveOutlinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_outlinks_domains_view_domain(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_outlinks_domains_view_domain(
@@ -826,7 +826,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrieveOutlinksDomainsViewDomainResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_outlinks_domains_view_domain(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_outlinks_domains_view_domain(
@@ -841,7 +841,7 @@ class TestAsyncLinks:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_pages(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_pages(
@@ -849,7 +849,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrievePagesResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_pages_with_all_params(self, async_client: AsyncKeysso) -> None:
         link = await async_client.report.simple.links.retrieve_pages(
@@ -861,7 +861,7 @@ class TestAsyncLinks:
         )
         assert_matches_type(LinkRetrievePagesResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_pages(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.links.with_raw_response.retrieve_pages(
@@ -873,7 +873,7 @@ class TestAsyncLinks:
         link = await response.parse()
         assert_matches_type(LinkRetrievePagesResponse, link, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_pages(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.links.with_streaming_response.retrieve_pages(

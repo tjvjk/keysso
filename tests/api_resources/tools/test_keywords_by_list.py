@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestKeywordsByList:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: Keysso) -> None:
         keywords_by_list = client.tools.keywords_by_list.create(
@@ -25,7 +25,7 @@ class TestKeywordsByList:
         )
         assert_matches_type(KeywordsByListCreateResponse, keywords_by_list, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Keysso) -> None:
         keywords_by_list = client.tools.keywords_by_list.create(
@@ -34,7 +34,7 @@ class TestKeywordsByList:
         )
         assert_matches_type(KeywordsByListCreateResponse, keywords_by_list, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Keysso) -> None:
         response = client.tools.keywords_by_list.with_raw_response.create(
@@ -46,7 +46,7 @@ class TestKeywordsByList:
         keywords_by_list = response.parse()
         assert_matches_type(KeywordsByListCreateResponse, keywords_by_list, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Keysso) -> None:
         with client.tools.keywords_by_list.with_streaming_response.create(
@@ -66,7 +66,7 @@ class TestAsyncKeywordsByList:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncKeysso) -> None:
         keywords_by_list = await async_client.tools.keywords_by_list.create(
@@ -74,7 +74,7 @@ class TestAsyncKeywordsByList:
         )
         assert_matches_type(KeywordsByListCreateResponse, keywords_by_list, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncKeysso) -> None:
         keywords_by_list = await async_client.tools.keywords_by_list.create(
@@ -83,7 +83,7 @@ class TestAsyncKeywordsByList:
         )
         assert_matches_type(KeywordsByListCreateResponse, keywords_by_list, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncKeysso) -> None:
         response = await async_client.tools.keywords_by_list.with_raw_response.create(
@@ -95,7 +95,7 @@ class TestAsyncKeywordsByList:
         keywords_by_list = await response.parse()
         assert_matches_type(KeywordsByListCreateResponse, keywords_by_list, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncKeysso) -> None:
         async with async_client.tools.keywords_by_list.with_streaming_response.create(

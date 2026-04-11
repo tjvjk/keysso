@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestDirect:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_ads(self, client: Keysso) -> None:
         direct = client.report.simple.direct.retrieve_ads(
@@ -28,7 +28,7 @@ class TestDirect:
         )
         assert_matches_type(DirectRetrieveAdsResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_ads_with_all_params(self, client: Keysso) -> None:
         direct = client.report.simple.direct.retrieve_ads(
@@ -41,7 +41,7 @@ class TestDirect:
         )
         assert_matches_type(DirectRetrieveAdsResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_ads(self, client: Keysso) -> None:
         response = client.report.simple.direct.with_raw_response.retrieve_ads(
@@ -53,7 +53,7 @@ class TestDirect:
         direct = response.parse()
         assert_matches_type(DirectRetrieveAdsResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_ads(self, client: Keysso) -> None:
         with client.report.simple.direct.with_streaming_response.retrieve_ads(
@@ -67,7 +67,7 @@ class TestDirect:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_domain(self, client: Keysso) -> None:
         direct = client.report.simple.direct.retrieve_domain(
@@ -75,7 +75,7 @@ class TestDirect:
         )
         assert_matches_type(DirectRetrieveDomainResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_domain_with_all_params(self, client: Keysso) -> None:
         direct = client.report.simple.direct.retrieve_domain(
@@ -88,7 +88,7 @@ class TestDirect:
         )
         assert_matches_type(DirectRetrieveDomainResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_domain(self, client: Keysso) -> None:
         response = client.report.simple.direct.with_raw_response.retrieve_domain(
@@ -100,7 +100,7 @@ class TestDirect:
         direct = response.parse()
         assert_matches_type(DirectRetrieveDomainResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_domain(self, client: Keysso) -> None:
         with client.report.simple.direct.with_streaming_response.retrieve_domain(
@@ -120,7 +120,7 @@ class TestAsyncDirect:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_ads(self, async_client: AsyncKeysso) -> None:
         direct = await async_client.report.simple.direct.retrieve_ads(
@@ -128,7 +128,7 @@ class TestAsyncDirect:
         )
         assert_matches_type(DirectRetrieveAdsResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_ads_with_all_params(self, async_client: AsyncKeysso) -> None:
         direct = await async_client.report.simple.direct.retrieve_ads(
@@ -141,7 +141,7 @@ class TestAsyncDirect:
         )
         assert_matches_type(DirectRetrieveAdsResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_ads(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.direct.with_raw_response.retrieve_ads(
@@ -153,7 +153,7 @@ class TestAsyncDirect:
         direct = await response.parse()
         assert_matches_type(DirectRetrieveAdsResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_ads(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.direct.with_streaming_response.retrieve_ads(
@@ -167,7 +167,7 @@ class TestAsyncDirect:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_domain(self, async_client: AsyncKeysso) -> None:
         direct = await async_client.report.simple.direct.retrieve_domain(
@@ -175,7 +175,7 @@ class TestAsyncDirect:
         )
         assert_matches_type(DirectRetrieveDomainResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_domain_with_all_params(self, async_client: AsyncKeysso) -> None:
         direct = await async_client.report.simple.direct.retrieve_domain(
@@ -188,7 +188,7 @@ class TestAsyncDirect:
         )
         assert_matches_type(DirectRetrieveDomainResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_domain(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.simple.direct.with_raw_response.retrieve_domain(
@@ -200,7 +200,7 @@ class TestAsyncDirect:
         direct = await response.parse()
         assert_matches_type(DirectRetrieveDomainResponse, direct, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_domain(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.simple.direct.with_streaming_response.retrieve_domain(

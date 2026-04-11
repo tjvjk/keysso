@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from .rsya.rsya import (
+from .rsya import (
     RsyaResource,
     AsyncRsyaResource,
     RsyaResourceWithRawResponse,

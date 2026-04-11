@@ -20,13 +20,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestCompetitors:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: Keysso) -> None:
         competitor = client.projects.competitors.list()
         assert_matches_type(CompetitorListResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Keysso) -> None:
         competitor = client.projects.competitors.list(
@@ -34,7 +34,7 @@ class TestCompetitors:
         )
         assert_matches_type(CompetitorListResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Keysso) -> None:
         response = client.projects.competitors.with_raw_response.list()
@@ -44,7 +44,7 @@ class TestCompetitors:
         competitor = response.parse()
         assert_matches_type(CompetitorListResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Keysso) -> None:
         with client.projects.competitors.with_streaming_response.list() as response:
@@ -56,7 +56,7 @@ class TestCompetitors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare(self, client: Keysso) -> None:
         competitor = client.projects.competitors.compare(
@@ -65,7 +65,7 @@ class TestCompetitors:
         )
         assert_matches_type(CompetitorCompareResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare_with_all_params(self, client: Keysso) -> None:
         competitor = client.projects.competitors.compare(
@@ -75,7 +75,7 @@ class TestCompetitors:
         )
         assert_matches_type(CompetitorCompareResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_compare(self, client: Keysso) -> None:
         response = client.projects.competitors.with_raw_response.compare(
@@ -88,7 +88,7 @@ class TestCompetitors:
         competitor = response.parse()
         assert_matches_type(CompetitorCompareResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_compare(self, client: Keysso) -> None:
         with client.projects.competitors.with_streaming_response.compare(
@@ -109,13 +109,13 @@ class TestAsyncCompetitors:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncKeysso) -> None:
         competitor = await async_client.projects.competitors.list()
         assert_matches_type(CompetitorListResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncKeysso) -> None:
         competitor = await async_client.projects.competitors.list(
@@ -123,7 +123,7 @@ class TestAsyncCompetitors:
         )
         assert_matches_type(CompetitorListResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncKeysso) -> None:
         response = await async_client.projects.competitors.with_raw_response.list()
@@ -133,7 +133,7 @@ class TestAsyncCompetitors:
         competitor = await response.parse()
         assert_matches_type(CompetitorListResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncKeysso) -> None:
         async with async_client.projects.competitors.with_streaming_response.list() as response:
@@ -145,7 +145,7 @@ class TestAsyncCompetitors:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare(self, async_client: AsyncKeysso) -> None:
         competitor = await async_client.projects.competitors.compare(
@@ -154,7 +154,7 @@ class TestAsyncCompetitors:
         )
         assert_matches_type(CompetitorCompareResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare_with_all_params(self, async_client: AsyncKeysso) -> None:
         competitor = await async_client.projects.competitors.compare(
@@ -164,7 +164,7 @@ class TestAsyncCompetitors:
         )
         assert_matches_type(CompetitorCompareResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_compare(self, async_client: AsyncKeysso) -> None:
         response = await async_client.projects.competitors.with_raw_response.compare(
@@ -177,7 +177,7 @@ class TestAsyncCompetitors:
         competitor = await response.parse()
         assert_matches_type(CompetitorCompareResponse, competitor, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_compare(self, async_client: AsyncKeysso) -> None:
         async with async_client.projects.competitors.with_streaming_response.compare(

@@ -6,44 +6,44 @@ from typing_extensions import Literal
 
 import httpx
 
-from ...._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
-from ...._utils import maybe_transform, async_maybe_transform
-from ...._compat import cached_property
-from ...._resource import SyncAPIResource, AsyncAPIResource
-from ...._response import (
+from ..._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
+from ..._utils import maybe_transform, async_maybe_transform
+from ..._compat import cached_property
+from ..._resource import SyncAPIResource, AsyncAPIResource
+from ..._response import (
     to_raw_response_wrapper,
     to_streamed_response_wrapper,
     async_to_raw_response_wrapper,
     async_to_streamed_response_wrapper,
 )
-from ....types.tools import concurents_by_keyword_create_params
-from ...._base_client import make_request_options
-from ....types.report import Base
-from ....types.report.base import Base
-from ....types.tools.concurents_by_keyword_create_response import ConcurentsByKeywordCreateResponse
+from ...types.tools import keywords_by_page_create_params
+from ..._base_client import make_request_options
+from ...types.report import Base
+from ...types.report.base import Base
+from ...types.tools.keywords_by_page_create_response import KeywordsByPageCreateResponse
 
-__all__ = ["ConcurentsByKeywordsResource", "AsyncConcurentsByKeywordsResource"]
+__all__ = ["KeywordsByPagesResource", "AsyncKeywordsByPagesResource"]
 
 
-class ConcurentsByKeywordsResource(SyncAPIResource):
+class KeywordsByPagesResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> ConcurentsByKeywordsResourceWithRawResponse:
+    def with_raw_response(self) -> KeywordsByPagesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
-        return ConcurentsByKeywordsResourceWithRawResponse(self)
+        return KeywordsByPagesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> ConcurentsByKeywordsResourceWithStreamingResponse:
+    def with_streaming_response(self) -> KeywordsByPagesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
-        return ConcurentsByKeywordsResourceWithStreamingResponse(self)
+        return KeywordsByPagesResourceWithStreamingResponse(self)
 
     def create(
         self,
@@ -57,13 +57,13 @@ class ConcurentsByKeywordsResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> ConcurentsByKeywordCreateResponse:
+    ) -> KeywordsByPageCreateResponse:
         """
         Создание отчета и получение идентификатора, который понадобится в дальнейшем для
         взаимодействия с отчетом.
 
         Args:
-          list: Список поисковых фраз
+          list: Список запросов страниц
 
           base: Региональная база данных, по которой происходит выборка `msk` - Яндекс: Москва
               `gru` - Google: Москва `zen` - Дзен `gkv` - Google: Киев `rnd` - Яндекс:
@@ -86,41 +86,41 @@ class ConcurentsByKeywordsResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._post(
-            "/tools/concurents_by_keywords",
+            "/tools/keywords_by_pages",
             body=maybe_transform(
                 {
                     "list": list,
                     "base": base,
                     "top": top,
                 },
-                concurents_by_keyword_create_params.ConcurentsByKeywordCreateParams,
+                keywords_by_page_create_params.KeywordsByPageCreateParams,
             ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=ConcurentsByKeywordCreateResponse,
+            cast_to=KeywordsByPageCreateResponse,
         )
 
 
-class AsyncConcurentsByKeywordsResource(AsyncAPIResource):
+class AsyncKeywordsByPagesResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncConcurentsByKeywordsResourceWithRawResponse:
+    def with_raw_response(self) -> AsyncKeywordsByPagesResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
-        return AsyncConcurentsByKeywordsResourceWithRawResponse(self)
+        return AsyncKeywordsByPagesResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncConcurentsByKeywordsResourceWithStreamingResponse:
+    def with_streaming_response(self) -> AsyncKeywordsByPagesResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
-        return AsyncConcurentsByKeywordsResourceWithStreamingResponse(self)
+        return AsyncKeywordsByPagesResourceWithStreamingResponse(self)
 
     async def create(
         self,
@@ -134,13 +134,13 @@ class AsyncConcurentsByKeywordsResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> ConcurentsByKeywordCreateResponse:
+    ) -> KeywordsByPageCreateResponse:
         """
         Создание отчета и получение идентификатора, который понадобится в дальнейшем для
         взаимодействия с отчетом.
 
         Args:
-          list: Список поисковых фраз
+          list: Список запросов страниц
 
           base: Региональная база данных, по которой происходит выборка `msk` - Яндекс: Москва
               `gru` - Google: Москва `zen` - Дзен `gkv` - Google: Киев `rnd` - Яндекс:
@@ -163,53 +163,53 @@ class AsyncConcurentsByKeywordsResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._post(
-            "/tools/concurents_by_keywords",
+            "/tools/keywords_by_pages",
             body=await async_maybe_transform(
                 {
                     "list": list,
                     "base": base,
                     "top": top,
                 },
-                concurents_by_keyword_create_params.ConcurentsByKeywordCreateParams,
+                keywords_by_page_create_params.KeywordsByPageCreateParams,
             ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=ConcurentsByKeywordCreateResponse,
+            cast_to=KeywordsByPageCreateResponse,
         )
 
 
-class ConcurentsByKeywordsResourceWithRawResponse:
-    def __init__(self, concurents_by_keywords: ConcurentsByKeywordsResource) -> None:
-        self._concurents_by_keywords = concurents_by_keywords
+class KeywordsByPagesResourceWithRawResponse:
+    def __init__(self, keywords_by_pages: KeywordsByPagesResource) -> None:
+        self._keywords_by_pages = keywords_by_pages
 
         self.create = to_raw_response_wrapper(
-            concurents_by_keywords.create,
+            keywords_by_pages.create,
         )
 
 
-class AsyncConcurentsByKeywordsResourceWithRawResponse:
-    def __init__(self, concurents_by_keywords: AsyncConcurentsByKeywordsResource) -> None:
-        self._concurents_by_keywords = concurents_by_keywords
+class AsyncKeywordsByPagesResourceWithRawResponse:
+    def __init__(self, keywords_by_pages: AsyncKeywordsByPagesResource) -> None:
+        self._keywords_by_pages = keywords_by_pages
 
         self.create = async_to_raw_response_wrapper(
-            concurents_by_keywords.create,
+            keywords_by_pages.create,
         )
 
 
-class ConcurentsByKeywordsResourceWithStreamingResponse:
-    def __init__(self, concurents_by_keywords: ConcurentsByKeywordsResource) -> None:
-        self._concurents_by_keywords = concurents_by_keywords
+class KeywordsByPagesResourceWithStreamingResponse:
+    def __init__(self, keywords_by_pages: KeywordsByPagesResource) -> None:
+        self._keywords_by_pages = keywords_by_pages
 
         self.create = to_streamed_response_wrapper(
-            concurents_by_keywords.create,
+            keywords_by_pages.create,
         )
 
 
-class AsyncConcurentsByKeywordsResourceWithStreamingResponse:
-    def __init__(self, concurents_by_keywords: AsyncConcurentsByKeywordsResource) -> None:
-        self._concurents_by_keywords = concurents_by_keywords
+class AsyncKeywordsByPagesResourceWithStreamingResponse:
+    def __init__(self, keywords_by_pages: AsyncKeywordsByPagesResource) -> None:
+        self._keywords_by_pages = keywords_by_pages
 
         self.create = async_to_streamed_response_wrapper(
-            concurents_by_keywords.create,
+            keywords_by_pages.create,
         )

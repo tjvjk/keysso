@@ -22,7 +22,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestReport:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare_backlinks(self, client: Keysso) -> None:
         report = client.report.compare_backlinks(
@@ -31,7 +31,7 @@ class TestReport:
         )
         assert_matches_type(ReportCompareBacklinksResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare_backlinks_with_all_params(self, client: Keysso) -> None:
         report = client.report.compare_backlinks(
@@ -46,7 +46,7 @@ class TestReport:
         )
         assert_matches_type(ReportCompareBacklinksResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_compare_backlinks(self, client: Keysso) -> None:
         response = client.report.with_raw_response.compare_backlinks(
@@ -59,7 +59,7 @@ class TestReport:
         report = response.parse()
         assert_matches_type(ReportCompareBacklinksResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_compare_backlinks(self, client: Keysso) -> None:
         with client.report.with_streaming_response.compare_backlinks(
@@ -74,7 +74,7 @@ class TestReport:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare_context(self, client: Keysso) -> None:
         report = client.report.compare_context(
@@ -83,7 +83,7 @@ class TestReport:
         )
         assert_matches_type(ReportCompareContextResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare_context_with_all_params(self, client: Keysso) -> None:
         report = client.report.compare_context(
@@ -98,7 +98,7 @@ class TestReport:
         )
         assert_matches_type(ReportCompareContextResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_compare_context(self, client: Keysso) -> None:
         response = client.report.with_raw_response.compare_context(
@@ -111,7 +111,7 @@ class TestReport:
         report = response.parse()
         assert_matches_type(ReportCompareContextResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_compare_context(self, client: Keysso) -> None:
         with client.report.with_streaming_response.compare_context(
@@ -126,7 +126,7 @@ class TestReport:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare_organic(self, client: Keysso) -> None:
         report = client.report.compare_organic(
@@ -135,7 +135,7 @@ class TestReport:
         )
         assert_matches_type(ReportCompareOrganicResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_compare_organic_with_all_params(self, client: Keysso) -> None:
         report = client.report.compare_organic(
@@ -150,7 +150,7 @@ class TestReport:
         )
         assert_matches_type(ReportCompareOrganicResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_compare_organic(self, client: Keysso) -> None:
         response = client.report.with_raw_response.compare_organic(
@@ -163,7 +163,7 @@ class TestReport:
         report = response.parse()
         assert_matches_type(ReportCompareOrganicResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_compare_organic(self, client: Keysso) -> None:
         with client.report.with_streaming_response.compare_organic(
@@ -178,7 +178,7 @@ class TestReport:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_system_keywords(self, client: Keysso) -> None:
         report = client.report.create_system_keywords(
@@ -187,7 +187,7 @@ class TestReport:
         )
         assert_matches_type(ReportCreateSystemKeywordsResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_system_keywords_with_all_params(self, client: Keysso) -> None:
         report = client.report.create_system_keywords(
@@ -204,7 +204,7 @@ class TestReport:
         )
         assert_matches_type(ReportCreateSystemKeywordsResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_system_keywords(self, client: Keysso) -> None:
         response = client.report.with_raw_response.create_system_keywords(
@@ -217,7 +217,7 @@ class TestReport:
         report = response.parse()
         assert_matches_type(ReportCreateSystemKeywordsResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_system_keywords(self, client: Keysso) -> None:
         with client.report.with_streaming_response.create_system_keywords(
@@ -238,7 +238,7 @@ class TestAsyncReport:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare_backlinks(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.compare_backlinks(
@@ -247,7 +247,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCompareBacklinksResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare_backlinks_with_all_params(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.compare_backlinks(
@@ -262,7 +262,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCompareBacklinksResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_compare_backlinks(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.with_raw_response.compare_backlinks(
@@ -275,7 +275,7 @@ class TestAsyncReport:
         report = await response.parse()
         assert_matches_type(ReportCompareBacklinksResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_compare_backlinks(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.with_streaming_response.compare_backlinks(
@@ -290,7 +290,7 @@ class TestAsyncReport:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare_context(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.compare_context(
@@ -299,7 +299,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCompareContextResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare_context_with_all_params(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.compare_context(
@@ -314,7 +314,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCompareContextResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_compare_context(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.with_raw_response.compare_context(
@@ -327,7 +327,7 @@ class TestAsyncReport:
         report = await response.parse()
         assert_matches_type(ReportCompareContextResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_compare_context(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.with_streaming_response.compare_context(
@@ -342,7 +342,7 @@ class TestAsyncReport:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare_organic(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.compare_organic(
@@ -351,7 +351,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCompareOrganicResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_compare_organic_with_all_params(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.compare_organic(
@@ -366,7 +366,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCompareOrganicResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_compare_organic(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.with_raw_response.compare_organic(
@@ -379,7 +379,7 @@ class TestAsyncReport:
         report = await response.parse()
         assert_matches_type(ReportCompareOrganicResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_compare_organic(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.with_streaming_response.compare_organic(
@@ -394,7 +394,7 @@ class TestAsyncReport:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_system_keywords(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.create_system_keywords(
@@ -403,7 +403,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCreateSystemKeywordsResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_system_keywords_with_all_params(self, async_client: AsyncKeysso) -> None:
         report = await async_client.report.create_system_keywords(
@@ -420,7 +420,7 @@ class TestAsyncReport:
         )
         assert_matches_type(ReportCreateSystemKeywordsResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_system_keywords(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.with_raw_response.create_system_keywords(
@@ -433,7 +433,7 @@ class TestAsyncReport:
         report = await response.parse()
         assert_matches_type(ReportCreateSystemKeywordsResponse, report, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_system_keywords(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.with_streaming_response.create_system_keywords(

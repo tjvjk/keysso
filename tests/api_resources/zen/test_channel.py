@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestChannel:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_publications(self, client: Keysso) -> None:
         channel = client.zen.channel.list_publications(
@@ -25,7 +25,7 @@ class TestChannel:
         )
         assert_matches_type(ChannelListPublicationsResponse, channel, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_publications_with_all_params(self, client: Keysso) -> None:
         channel = client.zen.channel.list_publications(
@@ -36,7 +36,7 @@ class TestChannel:
         )
         assert_matches_type(ChannelListPublicationsResponse, channel, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_publications(self, client: Keysso) -> None:
         response = client.zen.channel.with_raw_response.list_publications(
@@ -48,7 +48,7 @@ class TestChannel:
         channel = response.parse()
         assert_matches_type(ChannelListPublicationsResponse, channel, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_publications(self, client: Keysso) -> None:
         with client.zen.channel.with_streaming_response.list_publications(
@@ -68,7 +68,7 @@ class TestAsyncChannel:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_publications(self, async_client: AsyncKeysso) -> None:
         channel = await async_client.zen.channel.list_publications(
@@ -76,7 +76,7 @@ class TestAsyncChannel:
         )
         assert_matches_type(ChannelListPublicationsResponse, channel, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_publications_with_all_params(self, async_client: AsyncKeysso) -> None:
         channel = await async_client.zen.channel.list_publications(
@@ -87,7 +87,7 @@ class TestAsyncChannel:
         )
         assert_matches_type(ChannelListPublicationsResponse, channel, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_publications(self, async_client: AsyncKeysso) -> None:
         response = await async_client.zen.channel.with_raw_response.list_publications(
@@ -99,7 +99,7 @@ class TestAsyncChannel:
         channel = await response.parse()
         assert_matches_type(ChannelListPublicationsResponse, channel, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_publications(self, async_client: AsyncKeysso) -> None:
         async with async_client.zen.channel.with_streaming_response.list_publications(

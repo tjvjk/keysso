@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
+from typing_extensions import Literal
+
 import httpx
 
-from ...types import serp_list_params, serp_create_params
-from ..._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
+from ..._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
@@ -16,48 +17,68 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
-from ...types.serp_list_response import SerpListResponse
-from ...types.serp_create_response import SerpCreateResponse
+from ...types.report import Base, group_list_params, group_create_params
+from ...types.report.base import Base
+from ...types.report.group_list_response import GroupListResponse
+from ...types.report.group_create_response import GroupCreateResponse
 
-__all__ = ["SerpResource", "AsyncSerpResource"]
+__all__ = ["GroupResource", "AsyncGroupResource"]
 
 
-class SerpResource(SyncAPIResource):
+class GroupResource(SyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> SerpResourceWithRawResponse:
+    def with_raw_response(self) -> GroupResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
-        return SerpResourceWithRawResponse(self)
+        return GroupResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> SerpResourceWithStreamingResponse:
+    def with_streaming_response(self) -> GroupResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
-        return SerpResourceWithStreamingResponse(self)
+        return GroupResourceWithStreamingResponse(self)
 
     def create(
         self,
         *,
-        data: serp_create_params.Data,
+        domains: SequenceNotStr[str],
+        base: Base | Omit = omit,
+        name: object | Omit = omit,
+        top: Literal[10, 50] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> SerpCreateResponse:
+    ) -> GroupCreateResponse:
         """
-        Пример запроса `https://api.keys.so/serp`
+        Создание отчета и получение идентификатора, который понадобится в дальнейшем для
+        взаимодействия с отчетом.
 
         Args:
-          data: Данные для парсинга
+          domains: Массив доменов в отчете
+
+          base: Региональная база данных, по которой происходит выборка `msk` - Яндекс: Москва
+              `gru` - Google: Москва `zen` - Дзен `gkv` - Google: Киев `rnd` - Яндекс:
+              Ростов-на-Дону `ekb` - Яндекс: Екатеринбург `ufa` - Яндекс: Уфа `sar` - Яндекс:
+              Саратов `krr` - Яндекс: Краснодар `prm` - Яндекс: Пермь `sam` - Яндекс: Самара
+              `kry` - Яндекс: Красноярск `oms` - Яндекс: Омск `kzn` - Яндекс: Казань `che` -
+              Яндекс: Челябинск `nsk` - Яндекс: Новосибирск `nnv` - Яндекс: Н. Новгород
+              `vlg` - Яндекс: Волгоград `vrn` - Яндекс: Воронеж `spb` - Яндекс:
+              Санкт-Петербург `mns` - Яндекс: Минск `tmn` - Яндекс: Тюмень `gmns` - Google:
+              Минск `tom` - Яндекс: Томск `gny` - Google: New York
+
+          name: Имя отчета
+
+          top: Охват позиций
 
           extra_headers: Send extra headers
 
@@ -68,18 +89,25 @@ class SerpResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._post(
-            "/serp",
-            body=maybe_transform({"data": data}, serp_create_params.SerpCreateParams),
+            "/report/group",
+            body=maybe_transform(
+                {
+                    "domains": domains,
+                    "base": base,
+                    "name": name,
+                    "top": top,
+                },
+                group_create_params.GroupCreateParams,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SerpCreateResponse,
+            cast_to=GroupCreateResponse,
         )
 
     def list(
         self,
         *,
-        is_main: bool | Omit = omit,
         page: int | Omit = omit,
         per_page: int | Omit = omit,
         sort: str | Omit = omit,
@@ -89,17 +117,12 @@ class SerpResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> SerpListResponse:
+    ) -> GroupListResponse:
         """
         Пример запроса
-        `https://api.keys.so/serp?sort=created_at%7Cdesc&page=1&per_page=25`
+        `https://api.keys.so/report/group/list?sort=access_date%7Cdesc&page=1&per_page=25`
 
         Args:
-          is_main: **Список проектов:** `true` — только созданные вручную `false` — все проекты,
-              включая созданные автоматически родительскими типами проектов
-
-              **Иерархия проектов:** `Мониторинг » Кластеризатор » Выдача | Wordstat`
-
           page: Порядковый номер страницы результатов
 
           per_page: Количество результатов на одной странице
@@ -122,7 +145,7 @@ class SerpResource(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._get(
-            "/serp",
+            "/report/group/list",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -130,54 +153,71 @@ class SerpResource(SyncAPIResource):
                 timeout=timeout,
                 query=maybe_transform(
                     {
-                        "is_main": is_main,
                         "page": page,
                         "per_page": per_page,
                         "sort": sort,
                     },
-                    serp_list_params.SerpListParams,
+                    group_list_params.GroupListParams,
                 ),
             ),
-            cast_to=SerpListResponse,
+            cast_to=GroupListResponse,
         )
 
 
-class AsyncSerpResource(AsyncAPIResource):
+class AsyncGroupResource(AsyncAPIResource):
     @cached_property
-    def with_raw_response(self) -> AsyncSerpResourceWithRawResponse:
+    def with_raw_response(self) -> AsyncGroupResourceWithRawResponse:
         """
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/tjvjk/keysso#accessing-raw-response-data-eg-headers
         """
-        return AsyncSerpResourceWithRawResponse(self)
+        return AsyncGroupResourceWithRawResponse(self)
 
     @cached_property
-    def with_streaming_response(self) -> AsyncSerpResourceWithStreamingResponse:
+    def with_streaming_response(self) -> AsyncGroupResourceWithStreamingResponse:
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
         For more information, see https://www.github.com/tjvjk/keysso#with_streaming_response
         """
-        return AsyncSerpResourceWithStreamingResponse(self)
+        return AsyncGroupResourceWithStreamingResponse(self)
 
     async def create(
         self,
         *,
-        data: serp_create_params.Data,
+        domains: SequenceNotStr[str],
+        base: Base | Omit = omit,
+        name: object | Omit = omit,
+        top: Literal[10, 50] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> SerpCreateResponse:
+    ) -> GroupCreateResponse:
         """
-        Пример запроса `https://api.keys.so/serp`
+        Создание отчета и получение идентификатора, который понадобится в дальнейшем для
+        взаимодействия с отчетом.
 
         Args:
-          data: Данные для парсинга
+          domains: Массив доменов в отчете
+
+          base: Региональная база данных, по которой происходит выборка `msk` - Яндекс: Москва
+              `gru` - Google: Москва `zen` - Дзен `gkv` - Google: Киев `rnd` - Яндекс:
+              Ростов-на-Дону `ekb` - Яндекс: Екатеринбург `ufa` - Яндекс: Уфа `sar` - Яндекс:
+              Саратов `krr` - Яндекс: Краснодар `prm` - Яндекс: Пермь `sam` - Яндекс: Самара
+              `kry` - Яндекс: Красноярск `oms` - Яндекс: Омск `kzn` - Яндекс: Казань `che` -
+              Яндекс: Челябинск `nsk` - Яндекс: Новосибирск `nnv` - Яндекс: Н. Новгород
+              `vlg` - Яндекс: Волгоград `vrn` - Яндекс: Воронеж `spb` - Яндекс:
+              Санкт-Петербург `mns` - Яндекс: Минск `tmn` - Яндекс: Тюмень `gmns` - Google:
+              Минск `tom` - Яндекс: Томск `gny` - Google: New York
+
+          name: Имя отчета
+
+          top: Охват позиций
 
           extra_headers: Send extra headers
 
@@ -188,18 +228,25 @@ class AsyncSerpResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._post(
-            "/serp",
-            body=await async_maybe_transform({"data": data}, serp_create_params.SerpCreateParams),
+            "/report/group",
+            body=await async_maybe_transform(
+                {
+                    "domains": domains,
+                    "base": base,
+                    "name": name,
+                    "top": top,
+                },
+                group_create_params.GroupCreateParams,
+            ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SerpCreateResponse,
+            cast_to=GroupCreateResponse,
         )
 
     async def list(
         self,
         *,
-        is_main: bool | Omit = omit,
         page: int | Omit = omit,
         per_page: int | Omit = omit,
         sort: str | Omit = omit,
@@ -209,17 +256,12 @@ class AsyncSerpResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> SerpListResponse:
+    ) -> GroupListResponse:
         """
         Пример запроса
-        `https://api.keys.so/serp?sort=created_at%7Cdesc&page=1&per_page=25`
+        `https://api.keys.so/report/group/list?sort=access_date%7Cdesc&page=1&per_page=25`
 
         Args:
-          is_main: **Список проектов:** `true` — только созданные вручную `false` — все проекты,
-              включая созданные автоматически родительскими типами проектов
-
-              **Иерархия проектов:** `Мониторинг » Кластеризатор » Выдача | Wordstat`
-
           page: Порядковый номер страницы результатов
 
           per_page: Количество результатов на одной странице
@@ -242,7 +284,7 @@ class AsyncSerpResource(AsyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return await self._get(
-            "/serp",
+            "/report/group/list",
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -250,61 +292,60 @@ class AsyncSerpResource(AsyncAPIResource):
                 timeout=timeout,
                 query=await async_maybe_transform(
                     {
-                        "is_main": is_main,
                         "page": page,
                         "per_page": per_page,
                         "sort": sort,
                     },
-                    serp_list_params.SerpListParams,
+                    group_list_params.GroupListParams,
                 ),
             ),
-            cast_to=SerpListResponse,
+            cast_to=GroupListResponse,
         )
 
 
-class SerpResourceWithRawResponse:
-    def __init__(self, serp: SerpResource) -> None:
-        self._serp = serp
+class GroupResourceWithRawResponse:
+    def __init__(self, group: GroupResource) -> None:
+        self._group = group
 
         self.create = to_raw_response_wrapper(
-            serp.create,
+            group.create,
         )
         self.list = to_raw_response_wrapper(
-            serp.list,
+            group.list,
         )
 
 
-class AsyncSerpResourceWithRawResponse:
-    def __init__(self, serp: AsyncSerpResource) -> None:
-        self._serp = serp
+class AsyncGroupResourceWithRawResponse:
+    def __init__(self, group: AsyncGroupResource) -> None:
+        self._group = group
 
         self.create = async_to_raw_response_wrapper(
-            serp.create,
+            group.create,
         )
         self.list = async_to_raw_response_wrapper(
-            serp.list,
+            group.list,
         )
 
 
-class SerpResourceWithStreamingResponse:
-    def __init__(self, serp: SerpResource) -> None:
-        self._serp = serp
+class GroupResourceWithStreamingResponse:
+    def __init__(self, group: GroupResource) -> None:
+        self._group = group
 
         self.create = to_streamed_response_wrapper(
-            serp.create,
+            group.create,
         )
         self.list = to_streamed_response_wrapper(
-            serp.list,
+            group.list,
         )
 
 
-class AsyncSerpResourceWithStreamingResponse:
-    def __init__(self, serp: AsyncSerpResource) -> None:
-        self._serp = serp
+class AsyncGroupResourceWithStreamingResponse:
+    def __init__(self, group: AsyncGroupResource) -> None:
+        self._group = group
 
         self.create = async_to_streamed_response_wrapper(
-            serp.create,
+            group.create,
         )
         self.list = async_to_streamed_response_wrapper(
-            serp.list,
+            group.list,
         )

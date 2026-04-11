@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestGroup:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: Keysso) -> None:
         group = client.report.group.create(
@@ -25,7 +25,7 @@ class TestGroup:
         )
         assert_matches_type(GroupCreateResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Keysso) -> None:
         group = client.report.group.create(
@@ -36,7 +36,7 @@ class TestGroup:
         )
         assert_matches_type(GroupCreateResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Keysso) -> None:
         response = client.report.group.with_raw_response.create(
@@ -48,7 +48,7 @@ class TestGroup:
         group = response.parse()
         assert_matches_type(GroupCreateResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Keysso) -> None:
         with client.report.group.with_streaming_response.create(
@@ -62,13 +62,13 @@ class TestGroup:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: Keysso) -> None:
         group = client.report.group.list()
         assert_matches_type(GroupListResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Keysso) -> None:
         group = client.report.group.list(
@@ -78,7 +78,7 @@ class TestGroup:
         )
         assert_matches_type(GroupListResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Keysso) -> None:
         response = client.report.group.with_raw_response.list()
@@ -88,7 +88,7 @@ class TestGroup:
         group = response.parse()
         assert_matches_type(GroupListResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Keysso) -> None:
         with client.report.group.with_streaming_response.list() as response:
@@ -106,7 +106,7 @@ class TestAsyncGroup:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncKeysso) -> None:
         group = await async_client.report.group.create(
@@ -114,7 +114,7 @@ class TestAsyncGroup:
         )
         assert_matches_type(GroupCreateResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncKeysso) -> None:
         group = await async_client.report.group.create(
@@ -125,7 +125,7 @@ class TestAsyncGroup:
         )
         assert_matches_type(GroupCreateResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.group.with_raw_response.create(
@@ -137,7 +137,7 @@ class TestAsyncGroup:
         group = await response.parse()
         assert_matches_type(GroupCreateResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.group.with_streaming_response.create(
@@ -151,13 +151,13 @@ class TestAsyncGroup:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncKeysso) -> None:
         group = await async_client.report.group.list()
         assert_matches_type(GroupListResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncKeysso) -> None:
         group = await async_client.report.group.list(
@@ -167,7 +167,7 @@ class TestAsyncGroup:
         )
         assert_matches_type(GroupListResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncKeysso) -> None:
         response = await async_client.report.group.with_raw_response.list()
@@ -177,7 +177,7 @@ class TestAsyncGroup:
         group = await response.parse()
         assert_matches_type(GroupListResponse, group, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncKeysso) -> None:
         async with async_client.report.group.with_streaming_response.list() as response:
